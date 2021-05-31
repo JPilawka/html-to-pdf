@@ -3,7 +3,7 @@ const fs = require("fs")
 
 async function printPDF() {
     try {
-        fs.readFile('./src/pages/2.html', (err, data) => {
+        fs.readFile('./src/pages/1.html', (err, data) => {
             convert(data)
         });
 
@@ -13,7 +13,7 @@ async function printPDF() {
 }
 
 async function convert(data) {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
     await page.setContent(data.toString());
     // await page.pdf({format: 'a4' });
