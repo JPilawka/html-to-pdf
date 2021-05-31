@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
+    <style>
+        body * {
+            display: block;
+        }
+        body {
+            /*font-family: "Open Sans";*/
+            font-family: "Poppins";
+            font-size: 24px; font-style: normal;
+            width: 210mm;
+            height: 297mm;
+            margin: 0;
+            padding: 0;
+            color: white;
+            border: pink 1px solid;
+        }
+        .page .header {
+            width: 100%;
+            display: block;
+            background: linear-gradient(90deg, #4868b1 0%, #58a13f 100%);
+            height: 220mm;
+            padding: 10mm 20mm;
+        }
+
+        .page .header tbody {
+            width: 100%;
+
+            display: block;
+        }
+        .date {
+            font-weight: 500;
+            font-size: 20px;
+        }
+        .list {
+            margin-left: 27.5mm;
+            z-index: 10;
+            display: inline-block;
+        }
+        .company-name {
+            display: inline-block;
+            position: relative;
+        }
+        .list-line {
+            height: 51mm;
+            width: 30mm;
+            border-right: solid 1.1mm black;
+            position: absolute;
+            top: 246mm;
+            z-index: -1000;
+        }
+        .list-circle {
+            width: 4.5mm;
+            height: 4.5mm;
+            border-radius: 5mm;
+            border-color: black;
+            border-style: solid;
+            display: block;
+            background-color: white;
+        }
+        .progress-ring__circle {
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        .list-item {
+            margin-bottom: 5mm;
+            line-height: 4mm;
+        }
+        .list-item span {
+            display: inline-block;
+        }
+        .list-item span:nth-child(2) {
+            margin-left: 2mm;
+            font-weight: 600;
+            font-size: 20px;
+            margin-bottom: 4mm;
+        }
+
+        .logo {
+            height: 80px;
+            margin-bottom: 80px;
+            position: relative;
+            display: block;
+            left: 115mm
+        }
+
+        .score-circle {
+            height: 370px;
+            width: 370px;
+            border-radius: 50%;
+            border-color: rgba(255, 255, 255, 0.5);
+            border-width: 8px;
+            border-style: solid;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .score-circle-filled {
+            position: absolute;
+            height: 386px;
+            width: 386px;
+            border-radius: 50%;
+            -webview-transform: rotate(180deg);
+            transform: rotate(180deg);
+            background: conic-gradient(#fff 180deg, #fff 30deg, transparent 30deg);
+        }
+        .score-circle-filled:before {
+            border-radius: 50%;
+            background: red;
+            content: "";
+        }
+
+        .score-circle #score-title{
+            font-size: 45px;
+            font-weight: 500;
+            line-height: 45px;
+        }
+        .score-row {
+            margin-top: 10mm;
+        }
+        .score-row td{
+            margin: 0;
+            display: inline-block;
+            position: relative;
+        }
+        .score-circle #score-number{
+            font-size: 120px;
+            line-height: 140px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        a:visited {
+            color: white;
+        }
+        .font-poppins {
+            font-family: "Poppins";
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <table class="header">
+            <tbody>
+            <tr class="date">
+                <td>Mar.1, 2021</td>
+            </tr>
+            <tr >
+                <td ><img class="logo" src="../images/company-logo.png"/></td>
+            </tr>
+            <tr>
+                <td class="font-poppins" style="font-wieght:700">Company ACT diagnostics for</td>
+            </tr>
+            <tr>
+                <td class="font-poppins" style="font-size: 100px;line-height: 100px;font-weight:650">
+                    Matthew Doe
+                </td>
+            </tr>
+            <tr class="score-row">
+                <td style="width: 80mm; font-size: 16px;position: relative;">
+                    <div style="margin-top: 50mm">
+                        <a href="#">www.clearchoice.nyc</a>
+                    </div>
+                    <div >
+                        <a href="#">office@clearechoice.nyc</a>
+                    </div>
+
+                </td>
+                <td style="width: 80mm; position: relative">
+<!--                    <div class="score-circle-filled"></div>-->
+                   <div style="position: absolute"><svg
+                           class="progress-ring"
+                           height="390"
+                           width="390"
+                   >
+                       <linearGradient id="linearColors1" x1="0" y1="0" x2="1" y2="1">
+                           <stop offset="0%" stop-color="#fff"></stop>
+                           <stop offset="100%" stop-color="#fff"></stop>
+                       </linearGradient>
+                       <path d="M 193, 20 m -75, 0 a 190,190 0 1,0 150,0"
+                             fill="none" stroke="url(#linearColors1)" stroke-width="8" />
+<!--                       <circle-->
+<!--                               class="progress-ring__circle"-->
+<!--                               stroke-dasharray="360"-->
+<!--                               style="stroke-dashoffset:0"-->
+<!--                               stroke-width="8"-->
+<!--                               stroke="white"-->
+<!--                               fill="transparent"-->
+<!--                               r="188"-->
+<!--                               cx="193"-->
+<!--                               cy="193"-->
+<!--                       />-->
+                   </svg></div>
+                    <div class="score-circle">
+                        <div id="score-title">Score</div>
+                        <div id="score-number">72</div>
+                    </div>
+                </td>
+            </tr>
+
+            </tbody>
+
+        </table>
+        <table class="content-list">
+            <tbody>
+            <tr>
+
+                <td class="list" style="margin-top: 20mm;">
+                    <div class="list-item">
+                        <span class="list-circle"></span>
+                        <span style="color: black">Scores and history</span>
+                    </div>
+            <div class="list-item">
+                <span class="list-circle"></span>
+                <span style="color: black">Answer Summary</span>
+            </div>
+            <div class="list-item">
+                <span class="list-circle"></span>
+                <span style="color: black">Data (for tutor use)</span>
+            </div>
+                </td>
+                <td class="company-name" style="color: silver; font-size: 16px; font-weight: 600;top: 22mm; left: 60mm">&#169; CompanyName</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="list-line"></div>
+    </div>
+</body>
+</html>
