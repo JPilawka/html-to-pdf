@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: "Poppins";
+           src: url('../fonts/Poppins/Poppins-Black.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Light.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Medium.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-SemiBold.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Thin.ttf') format('truetype');
+
+        }
+        @font-face {
+            font-family: "Open Sans";
+            src: url('../fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype'),
+            url('../fonts/Open_Sans/OpenSans-Light.ttf') format('truetype'),
+            url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype'),
+            url('../fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
+        }
         body * {
             display: block;
         }
@@ -19,7 +37,6 @@
             margin: 0;
             padding: 0;
             color: white;
-            border: pink 1px solid;
         }
         .page .header {
             width: 100%;
@@ -87,7 +104,8 @@
             margin-bottom: 80px;
             position: relative;
             display: block;
-            left: 115mm
+            left: 115mm;
+            background-image: url("../images/company-logo.png");
         }
 
         .score-circle {
