@@ -22,6 +22,7 @@
             url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype'),
             url('../fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
         }
+
         :root {
             --color-grey: #eaeaea;
             --color-blue: #4868b1;
@@ -40,8 +41,7 @@
             width: 100%
         }
         body {
-            font-family: "Open Sans";
-            /*font-family: "Poppins";*/
+            font-family: "Open Sans",serif;
             font-size: 24px; font-style: normal;
             width: 210mm;
             height: 297mm;
@@ -50,7 +50,7 @@
             color: black;
         }
         .font-poppins {
-            font-family: "Poppins";
+            font-family: "Poppins", serif;
             font-style: normal;
         }
         .col {
@@ -117,13 +117,12 @@
         #proctor-notes {
             position: relative;
         }
-        #proctor-notes img {
-            float: right;
+
+        #proctor-notes svg {
             position: absolute;
-            top: -20px;
-            right: -10px;
-            width: 30px;
-            height: 25px;
+            width: 40px;
+            top: -40px;
+            right: -20px;
         }
         .note:before {
             content: "";
@@ -190,7 +189,7 @@
             margin-bottom: 2mm;
         }
         #score-table thead td{
-            padding: 3mm 0mm;
+            padding: 3mm 0;
             font-weight: 600;
 
         }
@@ -265,7 +264,7 @@
             padding-top: 5mm;
             border-top: 3px var(--color-grey) solid;
             position: fixed;
-            bottom: 0mm;
+            bottom: 0;
             width: 210mm;
             background-color: white;
             z-index: 2000;
@@ -277,7 +276,7 @@
             font-size: 14px;
             color: var(--color-dark-grey);
             font-weight: 500;
-            font-family: "Poppins"
+            font-family: "Poppins", serif;
         }
 
     </style>
@@ -311,7 +310,7 @@
             </td>
             <td class="col note">
                 <div id="proctor-notes" style="font-size: 16px; margin-bottom: 3mm; font-weight: 600">Proctor notes
-                    <img src="../images/quotes.png" /></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="117.122" height="91.06" viewBox="0 0 117.122 91.06"><path d="M22.294-178.666a114.691,114.691,0,0,1-7.222-39.564q0-22.922,12.089-37.209T62.8-269.726v22.294q-16.642,0-16.642,22.294v4.082H67.2v42.39Zm65,0A109.583,109.583,0,0,1,80.07-218.23q0-22.922,12.089-37.209T127.8-269.726v22.294q-16.956,0-16.956,22.294v4.082h21.352v42.39Z" transform="translate(132.194 -178.666) rotate(-180)" fill="#fff"/></svg></div>
 
                 <div style="font-size: 14px; font-weight: 100; line-height: 24px; max-width: 110mm">Lorem ipsum dolor sit amet,
                     consectetur adipiscing elit.
