@@ -4,10 +4,8 @@ const merge = require('easy-pdf-merge');
 const pages = [1,2,3,4]
 async function printPDF(page) {
     try {
-        fs.readFile(`./src/pages/${page}.html`, (err, data) => {
-            convert(data, page)
-        });
-
+        const data = await fs.readFileSync(`./src/pages/${page}.html`)
+        await convert(data, page)
     } catch(e) {
         console.warn(e)
     }
@@ -22,16 +20,23 @@ async function convert(data, p) {
     // fs.writeFile('file1.pdf', pdf, (err, dat) => console.log(err, dat))
     console.log(`%cPage ${p} created`, "color:green;font-size:14px")
     await browser.close();
+    return true;
 }
 
-async function createPDFs() {
+async function mergePDFs() {
     const files = pages.map (p => `./src/pages/page${p}.pdf`)
-    merge(files, './src/pages/File Output.pdf', function (err) {
+    await merge(files, './src/pages/File Output.pdf', function (err) {
         if (err) {
             return console.log(err)
         }
         console.log('Successfully merged!')
     });
+    return true;
 }
 
-createPDFs();
+async function process() {
+    return pages.map(async page => await printPDF(page));
+
+}
+
+process().then(v => Promise.all(v)).then(p => mergePDFs()).catch(e => console.error(e))
