@@ -83,6 +83,11 @@
   "resolved" "https://registry.npmjs.org/devtools-protocol/-/devtools-protocol-0.0.869402.tgz"
   "version" "0.0.869402"
 
+"easy-pdf-merge@^0.2.6":
+  "integrity" "sha512-NJ8h82VZQxSt+2Xzb9A9eBasBnH+oltTULri45ulSzJ17TJwdH6LDqHcBWqbcbIfONL2rkuY0omsxpvtCIE46w=="
+  "resolved" "https://registry.npmjs.org/easy-pdf-merge/-/easy-pdf-merge-0.2.6.tgz"
+  "version" "0.2.6"
+
 "end-of-stream@^1.1.0", "end-of-stream@^1.4.1":
   "integrity" "sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q=="
   "resolved" "https://registry.npmjs.org/end-of-stream/-/end-of-stream-1.4.4.tgz"

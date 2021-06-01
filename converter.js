@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer')
 const fs = require("fs")
+const merge = require('easy-pdf-merge');
 const pages = [1,2,3,4]
 async function printPDF(page) {
     try {
@@ -23,4 +24,14 @@ async function convert(data, p) {
     await browser.close();
 }
 
-pages.forEach(page => printPDF(page).then(data => data).catch(e=>console.error(e)))
+async function createPDFs() {
+    const files = pages.map (p => `./src/pages/page${p}.pdf`)
+    merge(files, './src/pages/File Output.pdf', function (err) {
+        if (err) {
+            return console.log(err)
+        }
+        console.log('Successfully merged!')
+    });
+}
+
+createPDFs();

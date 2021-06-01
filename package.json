@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "easy-pdf-merge": "^0.2.6",
     "puppeteer": "^9.1.1"
   },
   "scripts": {
