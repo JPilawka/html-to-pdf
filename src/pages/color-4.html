@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: "Poppins";
+            src: url('../fonts/Poppins/Poppins-Black.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Light.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Medium.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-SemiBold.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Thin.ttf') format('truetype');
+
+        }
+        @font-face {
+            font-family: "Open Sans";
+            src: url('../fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype'),
+            url('../fonts/Open_Sans/OpenSans-Light.ttf') format('truetype'),
+            url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype'),
+            url('../fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
+        }
+        :root {
+            --color-grey: #eaeaea;
+            --color-blue: #4868b1;
+            --color-green: #58a13f;
+            --color-dark-grey: #8d8d8d;
+            --progress-bar-width: 50mm;
+            --main-gradient: linear-gradient(90deg, var(--color-blue) 0%, var(--color-green) 100%);
+            --color-red: red;
+            --color-orange: orange;
+
+        }
+        @page {
+            margin: 0;
+        }
+
+        body * {
+            display: block;
+        }
+        tr {
+            width: 100%
+        }
+        body {
+            font-family: "Open Sans",sans-serif;
+            font-size: 24px; font-style: normal;
+            width: 250mm;
+            height: 297mm;
+            margin: 0;
+            color: black;
+        }
+        .half-page {
+            width: 103.6mm;
+        }
+
+        .font-poppins {
+            font-family: "Poppins",sans-serif;
+            font-style: normal;
+        }
+        .col {
+            display: inline-block;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        a:visited {
+            color: white;
+        }
+
+
+        .logo {
+            height: 10mm;
+            width: 10mm;
+        }
+
+        .links {
+            font-size: 14px;
+            line-height: 24px;
+            text-align: right;
+            font-weight: 600;
+            color: var(--color-dark-grey);
+            padding: 0;
+        }
+
+        .header {
+            margin: 10mm 19mm 5mm 20mm;
+            width: 210mm;
+        }
+
+        .footer {
+            padding-top: 5mm;
+            border-top: 3px var(--color-grey) solid;
+            position: fixed;
+            bottom: 0;
+            width: 210mm;
+            background-color: white;
+            z-index: 2000;
+            height: 22mm;
+            margin: 10mm 20mm 0 ;
+        }
+        .footer td {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            color: var(--color-dark-grey);
+            font-weight: 500;
+            font-family: "Poppins", sans-serif;
+
+        }
+
+        .subject-header, .subject-general-score {
+            color: white;
+            background: var(--main-gradient);
+            width: 210mm;
+            margin: 0;
+            padding: 5mm 20mm;
+        }
+
+        .subject-header {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            border-bottom: white solid 2px;
+        }
+        .subject-general-score {
+            top: 44.1mm
+        }
+
+        .margin-body {
+            width: 210mm;
+            margin-left: 20mm;
+            margin-right: 20mm;
+        }
+
+        .section-header {
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            margin: 10mm 0;
+        }
+
+        .top-issues-section {
+            background-color: var(--color-grey);
+            font-size: 16px;
+            font-weight: 600;
+            padding: 2mm 5mm;
+            margin-top: 1mm
+        }
+
+        .top-issues-section span {
+            margin-right: 3mm
+        }
+
+        .top-issues-section > span:last-child {
+            margin-right: 0;
+            text-align: right;
+            float: right;
+            margin-top: 3px;
+        }
+
+        .top-issues-section span:nth-child(2) {
+            width: 110mm
+        }
+
+        .top-issues-section span:nth-child(3) {
+            width: 40mm
+        }
+
+        .badge {
+            color: white;
+            border-radius: 3px;
+            padding: 0.7mm 2mm;
+        }
+
+        .red {
+            background-color: var(--color-red);
+        }
+
+        .green {
+            background-color: var(--color-green);
+        }
+
+        .orange {
+            background-color: var(--color-orange);
+        }
+        .section-details {
+            background-color: var(--color-grey);
+            padding: 3mm 0;
+            border-top: 2px solid var(--color-dark-grey);
+            margin-bottom: 5mm;
+        }
+
+
+
+        .details-row{
+            font-size: 14px;
+            padding: 1.5mm 5mm;
+        }
+
+        .details-row > span:nth-child(2) {
+            width: 107mm;
+            padding-left: 5mm;
+        }
+
+        .details-row > span:nth-child(3) {
+            width: 50mm
+        }
+
+        .details-row > span:last-child {
+            width: 25mm;
+            text-align: right;
+        }
+
+        .progress-bar-container {
+            position: relative;
+        }
+        .progress-bar-front, .progress-bar-background {
+            border-radius: 50px;
+            height: 2mm;
+            top: 1.5mm
+        }
+        .progress-bar-background {
+            background-color: white;
+            width: var(--progress-bar-width);
+        }
+
+        .progress-bar-front {
+            background-color: var(--color-blue);
+            z-index: 1000;
+            position: absolute;
+            top: 0;
+        }
+
+        .first-sub-section {
+            padding-left: 10mm;
+        }
+
+        .first-sub-section > span:nth-child(2) {
+            width: 102mm;
+        }
+
+        .second-sub-section {
+            padding-left: 15mm;
+        }
+
+        .second-sub-section > span:nth-child(2) {
+            width: 95mm;
+        }
+        .total-core-container, .partial-score-container {
+            display: inline-block;
+            vertical-align:top;
+            margin-top: 10mm;
+            margin-bottom: 10mm;
+        }
+        .partial-score-container {
+            margin-left: 15mm;
+        }
+
+        .partial-score-container .title {
+            font-size: 18px;
+        }
+
+        .total-score {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 8px solid white;
+            margin: 0;
+        }
+
+        .partial-score {
+            width: 120px;
+            height: 120px;
+            display: inline-flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 8px solid white;
+            font-size: 16px;
+            text-align: center;
+            margin-right: 5mm;
+            margin-top: 5mm;
+            margin-bottom: 5mm;
+        }
+
+    </style>
+</head>
+<body>
+<div class="page">
+    <table>
+        <tbody>
+        <tr class="header">
+            <td class="col half-page"><img alt="" src="../images/logo.png" class="logo"/></td>
+            <td class="col half-page links">
+                <div>
+                    www.clearchoice.nyc
+                </div>
+                <div>
+                    office@clearechoice.nyc
+                </div>
+            </td>
+        </tr>
+        <tr class="subject-header">
+            <td>
+                <div>
+                    <span class="col">English</span>
+                    <span class="col" style="text-align: right;float: right;">1/2</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="subject-general-score">
+                <div class="total-core-container">
+                    <div class=" total-score">
+                        <div>Score</div>
+                        <div>111</div>
+                        <div>111 of 233</div>
+                    </div>
+                </div>
+
+                <div class="partial-score-container">
+                    <div class="title">Knowledge of the issues</div>
+                    <div>
+                        <div class="col partial-score">
+                            <div class="score-number">51</div>
+                            <div class="score-text">Mastered issues</div>
+                        </div>
+                        <div class="col partial-score">
+                            <div class="score-number">35</div>
+                            <div class="score-text">Issues for training</div>
+                        </div>
+                        <div class="col partial-score">
+                            <div class="score-number">14</div>
+                            <div class="score-text">Unmanned issues</div>
+                        </div>
+                    </div>
+                    <div class="title">Total issues: 42</div>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr class="margin-body">
+            <td >
+                <div class="section-header">What to Work On - Top Issue</div>
+                <div class="top-issues-section">
+                    <span class="col badge red">34</span>
+                    <span class="col">Plane Geometry and Trigonometry</span>
+                    <span class="col">Points Lost: <span class="col" style="color: var(--color-red)">4</span></span>
+                    <span class="col">34 of 233</span>
+                </div>
+                <div class="top-issues-section">
+                    <span class="col badge red">24</span>
+                    <span class="col">Pre-Algebra and Elementary Algebra</span>
+                    <span class="col">Points Lost: <span class="col" style="color: var(--color-red)">4</span></span>
+                    <span class="col">28 of 87</span>
+                </div>
+
+                <div class="top-issues-section">
+                    <span class="col badge red">34</span>
+                    <span class="col">Intermediate Algebra and Coordinate Geometry</span>
+                    <span class="col">Points Lost: <span class="col" style="color: var(--color-red)">2</span></span>
+                    <span class="col">12 of 233</span>
+                </div>
+
+            </td>
+
+        </tr>
+
+        <tr class="margin-body">
+            <td >
+                <div class="section-header">Strengths & Weaknesses</div>
+                <div>                <div class="top-issues-section">
+                    <span class="col badge red">34</span>
+                    <span class="col">Plane Geometry and Trigonometry</span>
+                    <span class="col">Points Lost: <span class="col" style="color: var(--color-red)">4</span></span>
+                    <span class="col">34 of 233</span>
+                </div>
+
+                    <div class="section-details">
+                        <div class="details-row">
+                            <span class="col badge red">34</span>
+                            <span class="col">Plane Geometry</span>
+                            <span class="col progress-bar-container" >
+                            <span class="progress-bar-front" style="width: calc(4 / 17 * var(--progress-bar-width))"></span>
+                            <span class="progress-bar-background"></span>
+                        </span>
+                            <span class="col">4 of 17</span>
+                        </div>
+
+                        <div class="details-row first-sub-section">
+                            <span class="col badge orange">34</span>
+                            <span class="col">Other Polygons</span>
+                            <span class="col progress-bar-container" >
+                            <span class="progress-bar-front" style="width: calc(7 / 15 * var(--progress-bar-width))"></span>
+                            <span class="progress-bar-background"></span>
+                        </span>
+                            <span class="col">7 of 15</span>
+                        </div>
+
+                        <div class="details-row second-sub-section">
+                            <span class="col badge green">100</span>
+                            <span class="col">Triangles</span>
+                            <span class="col progress-bar-container" >
+                            <span class="progress-bar-front" style="width: calc(48 / 78 * var(--progress-bar-width))"></span>
+                            <span class="progress-bar-background"></span>
+                        </span>
+                            <span class="col">48 of 78</span>
+                        </div>
+                    </div></div>
+
+            </td>
+
+        </tr>
+
+
+        <tr class="footer">
+            <td class="col" style="width: 30%; text-align: left">
+                Doe, Matthew
+            </td>
+            <td class="col" style="width: 40%; text-align: center">
+                ACT 74PRE - Mar.1, 2020
+            </td>
+            <td class="col" style="width: 28%;text-align: right">
+                4/10
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

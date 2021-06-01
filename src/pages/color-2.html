@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Report</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
     <style>
@@ -41,17 +42,13 @@
             width: 100%
         }
         body {
-            font-family: "Open Sans",serif;
+            font-family: "Open Sans",sans-serif;
             font-size: 24px; font-style: normal;
             width: 210mm;
             height: 297mm;
             margin: 0;
             padding: 10mm 20mm 0 ;
             color: black;
-        }
-        .font-poppins {
-            font-family: "Poppins", serif;
-            font-style: normal;
         }
         .col {
             display: inline-block;
@@ -276,7 +273,7 @@
             font-size: 14px;
             color: var(--color-dark-grey);
             font-weight: 500;
-            font-family: "Poppins", serif;
+            font-family: "Poppins", sans-serif;
         }
 
     </style>
@@ -286,7 +283,7 @@
     <table>
         <tbody>
         <tr class="header">
-            <td class="col half-page"><img src="../images/logo.png" class="logo"/></td>
+            <td class="col half-page"><img alt="" src="../images/logo.png" class="logo"/></td>
             <td class="col half-page links">
                 <div>
                     www.clearchoice.nyc
@@ -364,6 +361,7 @@
         <tr><td>
             <table id="score-table">
                 <thead style="text-align: center;">
+                <tr>
                     <td class="col" style="width: 25mm">Date</td>
                     <td class="col" style="width: 20mm">Form</td>
                     <td class="col" style="width: 20mm">Score</td>
@@ -372,6 +370,8 @@
                     <td class="col number-stats">R</td>
                     <td class="col number-stats">S</td>
                     <td class="col graphic-stats">Stats</td>
+                </tr>
+
                 </thead>
                 <tbody style="text-align: center">
                     <tr class="personal-best">

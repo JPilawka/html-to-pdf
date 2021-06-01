@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: "Poppins";
+            src: url('../fonts/Poppins/Poppins-Black.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Light.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Medium.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-SemiBold.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Thin.ttf') format('truetype');
+
+        }
+        @font-face {
+            font-family: "Open Sans";
+            src: url('../fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype'),
+            url('../fonts/Open_Sans/OpenSans-Light.ttf') format('truetype'),
+            url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype'),
+            url('../fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
+        }
+
+        :root {
+            --color-grey: #eaeaea;
+            --color-blue: #4868b1;
+            --color-green: #58a13f;
+            --color-dark-grey: #8d8d8d;
+            --progress-bar-width: 50mm;
+            --color-print-black: #555555;
+        }
+        @page {
+            margin: 0;
+        }
+
+        body * {
+            display: block;
+        }
+        tr {
+            width: 100%
+        }
+        body {
+            font-family: "Open Sans",sans-serif;
+            font-size: 24px; font-style: normal;
+            width: 210mm;
+            height: 297mm;
+            margin: 0;
+            padding: 10mm 20mm 0 ;
+            color: var(--color-print-black);
+        }
+
+        .col {
+            display: inline-block;
+        }
+
+        a {
+            color: var(--color-print-black);
+            text-decoration: none;
+        }
+        a:visited {
+            color: var(--color-print-black);
+        }
+
+        .circle {
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+
+            transform: rotate(180deg)
+        }
+
+        .circle:before {
+            border-radius: 50%;
+            background: white;
+            content: "";
+            width: 132px;
+            height: 132px;
+        }
+
+        .circle:before, .circle:after {
+            position: absolute;
+        }
+
+        .total-score.circle:before {
+            width: 182px;
+            height: 182px;
+        }
+
+        .circle div {
+            z-index: 1;
+            transform: rotate(180deg)
+        }
+
+        .note {
+            padding: 10mm;
+            border-radius: 3mm;
+            border: var(--color-print-black) 1px solid;
+            color: var(--color-print-black);
+            position: relative;
+        }
+        .half-page {
+            width: 49%
+        }
+
+        .quater-page {
+            width: 24%
+        }
+
+
+        #proctor-notes {
+            position: relative;
+        }
+
+        #proctor-notes svg {
+            position: absolute;
+            width: 40px;
+            top: -40px;
+            right: -20px;
+        }
+        /*.note:before {*/
+        /*    content: "";*/
+        /*    position: absolute;*/
+        /*    border-left: 24px solid var(--color-green);*/
+        /*    border-right: 12px solid transparent;*/
+        /*    border-top: 12px solid var(--color-green);*/
+        /*    border-bottom: 20px solid transparent;*/
+        /*    right: 32px;*/
+        /*    bottom: -32px;*/
+        /*}*/
+
+        .total-score {
+            font-size: 20px;
+            width: 200px;
+            height: 200px;
+            margin: auto 10mm;
+        }
+
+
+        .total-score div:nth-child(2) {
+            font-size: 46px;
+        }
+
+        .subject-score {
+            width: 150px;
+            height: 150px;
+            margin: auto;
+            font-size: 16px;
+        }
+
+        .subject-score div:nth-child(2) {
+            font-size: 36px;
+        }
+
+        .logo {
+            height: 10mm;
+            width: 10mm;
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+        }
+
+        .links {
+            font-size: 14px;
+            line-height: 24px;
+            text-align: right;
+            font-weight: 600;
+            color: var(--color-dark-grey);
+        }
+
+        .title {
+           font-weight: 700;
+            font-size: 20px;
+            margin-top: 10mm;
+            margin-bottom: 10mm;
+        }
+        #score-table {
+            border: 2px var(--color-grey) solid;
+            font-size: 14px;
+            color: var(--color-dark-grey);
+            padding-bottom: 5mm;
+        }
+
+        #score-table thead {
+            border-bottom: 2px solid var(--color-dark-grey);
+            margin-bottom: 2mm;
+        }
+        #score-table thead td{
+            padding: 3mm 0;
+            font-weight: 600;
+
+        }
+
+        #score-table tbody tr {
+            padding: 1.5mm 0;
+        }
+
+        .personal-best{
+            color: var(--color-print-black);
+            font-weight: 700;
+        }
+
+        .best-score-number, .best-in-column {
+            padding: 2px 7px ;
+            border-radius: 2px;
+            margin: auto;
+        }
+
+        .best-score-number {
+            background-color: var(--color-print-black);
+            color: white;
+            max-width: 4ch;
+        }
+
+        .best-in-column {
+            background-color: white;
+        }
+
+        .row span {
+            display: inline-block;
+        }
+
+        .number-stats {
+            width: 10mm;
+            text-align: center;
+        }
+
+        .graphic-stats {
+            width: 80mm;
+        }
+
+        .progress-bar-front, .progress-bar-background {
+            border-radius: 50mm;
+            height: 2mm;
+            position: absolute;
+            left: 5mm;
+            top: 1.5mm
+        }
+        .progress-bar-background {
+            background-color: var(--color-grey);
+            width: var(--progress-bar-width);
+
+        }
+
+        .progress-bar-front {
+            background-color: var(--color-print-black);
+            z-index: 1000;
+        }
+
+        .graphic-stats div {
+            position: relative;
+            top: 0;
+        }
+
+        .graphic-stats .progress-numbers{
+            text-align: right;
+            position: absolute;
+            right: 2mm;
+        }
+        .footer {
+            padding-top: 5mm;
+            border-top: 3px var(--color-grey) solid;
+            position: fixed;
+            bottom: 0;
+            width: 210mm;
+            background-color: white;
+            z-index: 2000;
+            height: 22mm;
+        }
+        .footer td {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            color: var(--color-dark-grey);
+            font-weight: 500;
+            font-family: "Poppins", sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+<div class="page">
+    <table>
+        <tbody>
+        <tr class="header">
+            <td class="col half-page"><img src="../images/logo.png" alt="" class="logo"/></td>
+            <td class="col half-page links">
+                <div>
+                    www.clearchoice.nyc
+                </div>
+                <div>
+                    office@clearechoice.nyc
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="col title">Scores and History</td>
+        </tr>
+        <tr>
+            <td class="col">
+                <div  class="circle total-score" style="background: conic-gradient(var(--color-print-black) 180deg, var(--color-print-black) calc(180deg + 30deg),var(--color-grey) calc(180deg + 30deg), var(--color-grey) 360deg);">
+                    <div>72 of 223</div>
+                    <div>72</div>
+                    <div>Total Score</div>
+                </div>
+
+            </td>
+            <td class="col note">
+                <div id="proctor-notes" style="font-size: 16px; margin-bottom: 3mm; font-weight: 600">Proctor notes
+                <svg xmlns="http://www.w3.org/2000/svg" width="117.122" height="91.06" viewBox="0 0 117.122 91.06">
+                    <path d="M22.294-178.666a114.691,114.691,0,0,1-7.222-39.564q0-22.922,12.089-37.209T62.8-269.726v22.294q-16.642,0-16.642,22.294v4.082H67.2v42.39Zm65,0A109.583,109.583,0,0,1,80.07-218.23q0-22.922,12.089-37.209T127.8-269.726v22.294q-16.956,0-16.956,22.294v4.082h21.352v42.39Z" transform="translate(132.194 -178.666) rotate(-180)" fill="#555"/>
+                </svg>
+                </div>
+
+                <div style="font-size: 14px; font-weight: 100; line-height: 24px; max-width: 110mm">Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit.
+                    Fusce vulputate viverra lectus at facilisis.
+                    Suspendisse pretium lacus sit amet diam facilisis tempor.
+                    Quisque gravida diam hendrerit bibendum lobortis.
+                    Aliquam aliquet mi vel purus tristique, ut ullamcorper odio vehicula.
+                    Duis eget nisi eget enim auctor dapibus
+                </div>
+            </td>
+        </tr>
+        <tr style="margin-top: 20mm; margin-bottom: 10mm">
+            <td class="col quater-page">
+                <div  class="circle subject-score" style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(141 / 233 * 360deg),var(--color-grey) calc(141 / 233 * 360deg), var(--color-grey) 360deg);">
+                    <div>141 of 223</div>
+                    <div>141</div>
+                    <div>English</div>
+                </div>
+
+            </td>
+            <td class="col quater-page">
+                <div  class="circle subject-score" style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(22 / 97 * 360deg),var(--color-grey) calc(22 / 97 * 360deg), var(--color-grey) 360deg);">
+                    <div>22 of 97</div>
+                    <div>22</div>
+                    <div>Math</div>
+                </div>
+
+            </td>
+            <td class="col quater-page">
+                <div  class="circle subject-score" style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(145 / 233 *360deg),var(--color-grey) calc(145 / 233 *360deg), var(--color-grey) 360deg);">
+                    <div>145 of 223</div>
+                    <div>145</div>
+                    <div>Reading</div>
+                </div>
+
+            </td>
+            <td class="col quater-page">
+                <div  class="circle subject-score " style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(72 / 233 *360deg),var(--color-grey) calc(72 / 233 *360deg), var(--color-grey) 360deg);">
+                    <div>72 of 223</div>
+                    <div>72</div>
+                    <div>Science</div>
+                </div>
+
+            </td>
+
+
+        </tr>
+        <tr>
+            <td class="col title">Score History</td>
+        </tr>
+        <tr><td>
+            <table id="score-table">
+                <thead style="text-align: center;">
+                <tr>
+                    <td class="col" style="width: 25mm">Date</td>
+                    <td class="col" style="width: 20mm">Form</td>
+                    <td class="col" style="width: 20mm">Score</td>
+                    <td class="col number-stats">E</td>
+                    <td class="col number-stats">M</td>
+                    <td class="col number-stats">R</td>
+                    <td class="col number-stats">S</td>
+                    <td class="col graphic-stats">Stats</td>
+                </tr>
+
+                </thead>
+                <tbody style="text-align: center">
+                    <tr class="personal-best">
+                        <td class="col" style="width: 25mm">
+                            <div>
+                                3.1.2020
+                            </div>
+                        </td>
+                        <td class="col" style="width: 20mm">
+                            <div>
+                                74FPRE
+                            </div>
+                        </td>
+                        <td class="col" style="width: 20mm">
+                            <div class="best-score-number">
+                                34
+                            </div>
+                        </td>
+                        <td class="col number-stats">
+                            <div class="best-in-column">
+                                51
+                            </div>
+                        </td>
+                        <td class="col number-stats">
+                            <div>
+                                17
+                            </div>
+                        </td>
+                        <td class="col number-stats">
+                            <div  class="best-in-column">
+                                71
+                            </div>
+                        </td>
+                        <td class="col  number-stats">
+                            <div>
+                                15
+                            </div>
+                        </td>
+                        <td class="col graphic-stats">
+                            <div>
+                                <span class="col progress-bar-container" >
+                                    <span class="progress-bar-front" style="width: calc(272 / 925 * var(--progress-bar-width))"></span>
+                                    <span class="progress-bar-background"></span>
+                                </span>
+                                <span class="col progress-numbers">272 of 925</span>
+                            </div>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="col" style="width: 25mm">
+                            <div>
+                                1.26.2020
+                            </div>
+                        </td>
+                        <td class="col" style="width: 20mm">
+                            <div>
+                                16MC1
+                            </div>
+                        </td>
+                        <td class="col" style="width: 20mm">
+                            <div>
+                                27
+                            </div>
+                        </td>
+                        <td class="col number-stats">
+                            <div >
+                                43
+                            </div>
+                        </td>
+                        <td class="col number-stats">
+                            <div class="best-in-column">
+                                15
+                            </div>
+                        </td>
+                        <td class="col number-stats">
+                            <div >
+                                87
+                            </div>
+                        </td>
+                        <td class="col  number-stats">
+                            <div class="best-in-column">
+                                14
+                            </div>
+                        </td>
+                        <td class="col graphic-stats">
+                            <div>
+                                <span class="col progress-bar-container">
+                                    <span class="progress-bar-front" style="width: calc(13 / 925 * var(--progress-bar-width))"></span>
+                                    <span class="progress-bar-background"></span>
+                                </span>
+                                <span class="col progress-numbers">13 of 925</span>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <div class="row" style="font-size: 14px; margin-top: 5mm">
+                <span class="best-score-number" style="font-weight: 500; margin-right: 2mm">34</span>
+                <span style="color: var(--color-dark-grey)">Personal Best</span>
+            </div>
+        </td>
+        </tr>
+
+        <tr class="footer">
+            <td class="col" style="width: 30%; text-align: left">
+                Doe, Matthew
+            </td>
+            <td class="col" style="width: 40%; text-align: center">
+                ACT 74PRE - Mar.1, 2020
+            </td>
+            <td class="col" style="width: 28%;text-align: right">
+                2/10
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

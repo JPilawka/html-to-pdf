@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <title>Report</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
     <style>
@@ -40,7 +41,7 @@
             width: 100%
         }
         body {
-            font-family: "Open Sans";
+            font-family: "Open Sans",sans-serif;
             /*font-family: "Poppins";*/
             font-size: 24px; font-style: normal;
             width: 210mm;
@@ -53,10 +54,6 @@
             width: 49%
         }
 
-        .font-poppins {
-            font-family: "Poppins";
-            font-style: normal;
-        }
         .col {
             display: inline-block;
         }
@@ -87,7 +84,7 @@
             padding-top: 5mm;
             border-top: 3px var(--color-grey) solid;
             position: fixed;
-            bottom: 0mm;
+            bottom: 0;
             width: 210mm;
             background-color: white;
             z-index: 2000;
@@ -99,7 +96,7 @@
             font-size: 14px;
             color: var(--color-dark-grey);
             font-weight: 500;
-            font-family: "Poppins"
+            font-family: "Poppins",sans-serif;
         }
 
         .subject {
@@ -157,7 +154,6 @@
             border-top: var(--color-dark-grey) 2px solid;
             margin-top: 0;
         }
-
 
         .question-row {
             line-height: 16px;
@@ -228,7 +224,7 @@
     <table>
         <tbody>
         <tr class="header">
-            <td class="col half-page"><img src="../images/logo.png" class="logo"/></td>
+            <td class="col half-page"><img alt="" src="../images/logo.png" class="logo"/></td>
             <td class="col half-page links">
                 <div>
                     www.clearchoice.nyc

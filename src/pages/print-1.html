@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: "Poppins";
+           src: url('../fonts/Poppins/Poppins-Black.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Light.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Medium.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-SemiBold.ttf') format('truetype'),
+            url('../fonts/Poppins/Poppins-Thin.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: "Open Sans";
+            src: url('../fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype'),
+            url('../fonts/Open_Sans/OpenSans-Light.ttf') format('truetype'),
+            url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype'),
+            url('../fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
+        }
+        :root {
+            --color-grey: #eaeaea;
+            --color-blue: #4868b1;
+            --color-green: #58a13f;
+            --color-dark-grey: #8d8d8d;
+            --progress-bar-width: 50mm;
+            --color-print-black: #555555;
+        }
+        body * {
+            display: block;
+        }
+        @page {
+            margin: 0;
+        }
+        body {
+            font-family: "Poppins", sans-serif;
+            font-size: 24px; font-style: normal;
+            width: 210mm;
+            height: 297mm;
+            margin: 0;
+            padding: 0;
+            color: var(--color-print-black);
+        }
+        .page .header {
+            width: 100%;
+            display: block;
+            height: 220mm;
+            padding: 10mm 20mm;
+            border-bottom: var(--color-print-black) 1px solid;
+            overflow: hidden;
+        }
+
+        .page .header tbody {
+            width: 100%;
+
+            display: block;
+        }
+        .date {
+            font-weight: 500;
+            font-size: 20px;
+        }
+        .list {
+            margin-left: 27.5mm;
+            z-index: 10;
+            display: inline-block;
+        }
+        .company-name {
+            display: inline-block;
+            position: relative;
+        }
+        .list-line {
+            height: 51mm;
+            width: 30mm;
+            border-right: solid 1.1mm black;
+            position: absolute;
+            top: 246mm;
+            z-index: -1000;
+        }
+        .list-circle {
+            width: 4.5mm;
+            height: 4.5mm;
+            border-radius: 5mm;
+            border-color: black;
+            border-style: solid;
+            display: block;
+            background-color: white;
+        }
+        .list-item {
+            margin-bottom: 5mm;
+            line-height: 4mm;
+        }
+        .list-item span {
+            display: inline-block;
+        }
+        .list-item span:nth-child(2) {
+            margin-left: 2mm;
+            font-weight: 600;
+            font-size: 20px;
+            margin-bottom: 4mm;
+        }
+
+        .logo {
+            height: 80px;
+            margin-bottom: 80px;
+            position: relative;
+            display: block;
+            left: 115mm;
+            background-image: url("../images/company-logo.png");
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+        }
+
+        .score-circle {
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            height: 370px;
+            width: 370px;
+            transform: rotate(180deg);
+
+        }
+
+
+        .score-circle:before {
+            border-radius: 50%;
+            background: white;
+            content: "";
+            width: 354px;
+            height: 354px;
+        }
+
+        .score-circle:before, .score-circle:after {
+            position: absolute;
+        }
+
+
+        .score-circle #score-title{
+            font-size: 45px;
+            font-weight: 500;
+            line-height: 45px
+        }
+
+        #score-number, #score-title {
+            z-index: 10;
+            color: var(--color-print-black);
+            transform: rotate(180deg)
+        }
+        .score-row {
+            margin-top: 10mm;
+        }
+        .score-row td{
+            margin: 0;
+            display: inline-block;
+            position: relative;
+        }
+        .score-circle #score-number{
+            font-size: 120px;
+            line-height: 140px;
+        }
+        a {
+            color: var(--color-print-black);
+            text-decoration: none;
+        }
+        a:visited {
+            color: var(--color-print-black);
+        }
+        .font-poppins {
+            font-family: "Poppins", sans-serif;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <table class="header">
+            <tbody>
+            <tr class="date">
+                <td>Mar.1, 2021</td>
+            </tr>
+            <tr >
+                <td ><img class="logo" alt="" src="../images/logo-color.png"/></td>
+            </tr>
+            <tr>
+                <td class="font-poppins" style="font-weight:700">Company ACT diagnostics for</td>
+            </tr>
+            <tr>
+                <td class="font-poppins" style="font-size: 100px;line-height: 100px;font-weight:650">
+                    Matthew Doe
+                </td>
+            </tr>
+            <tr class="score-row">
+                <td style="width: 80mm; font-size: 16px;position: relative;">
+                    <div style="margin-top: 50mm">
+                        <a href="#">www.clearchoice.nyc</a>
+                    </div>
+                    <div >
+                        <a href="#">office@clearechoice.nyc</a>
+                    </div>
+
+                </td>
+                <td style="width: 80mm; position: relative">
+                    <div  class="score-circle" style="background: conic-gradient(var(--color-print-black) 180deg, var(--color-print-black)  calc(180deg + 30deg),var(--color-grey) calc(180deg + 30deg), var(--color-grey) 360deg);">
+                        <div id="score-title">Score</div>
+                        <div id="score-number">72</div>
+                    </div>
+                </td>
+            </tr>
+
+            </tbody>
+
+        </table>
+        <table class="content-list">
+            <tbody>
+            <tr>
+
+                <td class="list" style="margin-top: 20mm;">
+                    <div class="list-item">
+                        <span class="list-circle"></span>
+                        <span style="color: black">Scores and history</span>
+                    </div>
+            <div class="list-item">
+                <span class="list-circle"></span>
+                <span style="color: black">Answer Summary</span>
+            </div>
+            <div class="list-item">
+                <span class="list-circle"></span>
+                <span style="color: black">Data (for tutor use)</span>
+            </div>
+                </td>
+                <td class="company-name" style="color: silver; font-size: 16px; font-weight: 600;top: 22mm; left: 60mm">&#169; CompanyName</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="list-line"></div>
+    </div>
+</body>
+</html>

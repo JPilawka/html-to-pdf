@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="">
 <head>
+    <title>Report</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
     <style>
@@ -31,7 +32,7 @@
             --main-gradient: linear-gradient(90deg, var(--color-blue) 0%, var(--color-green) 100%);
             --color-red: red;
             --color-orange: orange;
-
+            --color-print-black: #555555;
         }
         @page {
             margin: 0;
@@ -44,38 +45,34 @@
             width: 100%
         }
         body {
-            font-family: "Open Sans";
-            /*font-family: "Poppins";*/
+            font-family: "Open Sans",sans-serif;
             font-size: 24px; font-style: normal;
             width: 250mm;
             height: 297mm;
             margin: 0;
-            color: black;
+            color: var(--color-print-black);
         }
         .half-page {
             width: 103.6mm;
-        }
-
-        .font-poppins {
-            font-family: "Poppins";
-            font-style: normal;
         }
         .col {
             display: inline-block;
         }
 
         a {
-            color: white;
+            color: var(--color-print-black);
             text-decoration: none;
         }
         a:visited {
-            color: white;
+            color: var(--color-print-black);
         }
 
 
         .logo {
             height: 10mm;
             width: 10mm;
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
         }
 
         .links {
@@ -96,7 +93,7 @@
             padding-top: 5mm;
             border-top: 3px var(--color-grey) solid;
             position: fixed;
-            bottom: 0mm;
+            bottom: 0;
             width: 210mm;
             background-color: white;
             z-index: 2000;
@@ -109,22 +106,21 @@
             font-size: 14px;
             color: var(--color-dark-grey);
             font-weight: 500;
-            font-family: "Poppins";
+            font-family: "Poppins", sans-serif;
 
         }
 
         .subject-header, .subject-general-score {
-            color: white;
-            background: var(--main-gradient);
+            color: var(--color-print-black);
             width: 210mm;
             margin: 0;
             padding: 5mm 20mm;
         }
 
         .subject-header {
-            font-family: "Poppins";
+            font-family: "Poppins", sans-serif;
             font-weight: 500;
-            border-bottom: white solid 2px;
+            border-bottom: var(--color-dark-grey) solid 2px;
         }
         .subject-general-score {
             top: 44.1mm
@@ -137,13 +133,13 @@
         }
 
         .section-header {
-            font-family: "Poppins";
+            font-family: "Poppins", sans-serif;
             font-weight: 600;
             margin: 10mm 0;
         }
 
         .top-issues-section {
-            background-color: var(--color-grey);
+            border: 2px var(--color-grey) solid;
             font-size: 16px;
             font-weight: 600;
             padding: 2mm 5mm;
@@ -176,18 +172,19 @@
         }
 
         .red {
-            background-color: var(--color-red);
+            background-color: var(--color-print-black);
         }
 
         .green {
-            background-color: var(--color-green);
+            background-color: var(--color-dark-grey);
         }
 
         .orange {
-            background-color: var(--color-orange);
+            background-color: var(--color-grey);
+            color: var(--color-print-black)
         }
         .section-details {
-            background-color: var(--color-grey);
+          border: 2px var(--color-grey) solid;
             padding: 3mm 0;
             border-top: 2px solid var(--color-dark-grey);
             margin-bottom: 5mm;
@@ -223,15 +220,15 @@
             top: 1.5mm
         }
         .progress-bar-background {
-            background-color: white;
+            background-color: var(--color-grey);
             width: var(--progress-bar-width);
         }
 
         .progress-bar-front {
-            background-color: var(--color-blue);
+            background-color: var(--color-dark-grey);
             z-index: 1000;
             position: absolute;
-            top: 0mm;
+            top: 0;
         }
 
         .first-sub-section {
@@ -264,33 +261,62 @@
         }
 
         .total-score {
-            width: 200px;
-            height: 200px;
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
             border-radius: 50%;
-            border: 8px solid white;
-            margin: 0;
-        }
-
-        .partial-score {
-            width: 120px;
-            height: 120px;
             display: inline-flex;
             flex-direction: column;
             align-content: center;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
+            width: 200px;
+            height: 200px;
             border: 8px solid white;
+            margin: 0;
+            transform: rotate(180deg);
+        }
+
+        .total-score:before {
+            width: 184px;
+            height: 184px;
+        }
+
+        .partial-score {
+            border-radius: 50%;
+            display: inline-flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 120px;
+            transform: rotate(180deg);
             font-size: 16px;
             text-align: center;
+            font-weight: 400;
             margin-right: 5mm;
-            margin-top: 5mm;
-            margin-bottom: 5mm;
+        }
+
+        .partial-score:before, .total-score:before {
+            border-radius: 50%;
+            background: white;
+            content: "";
+
+        }
+        .partial-score:before{
+            width: 104px;
+            height: 104px;
+        }
+
+
+        .partial-score:before,
+        .partial-score:after,
+        .total-score:before,
+        .total-score:after {
+            position: absolute;
+        }
+
+        .partial-score div , .total-score div{
+            z-index: 10;
+            transform: rotate(180deg)
         }
 
     </style>
@@ -300,7 +326,7 @@
     <table>
         <tbody>
         <tr class="header">
-            <td class="col half-page"><img src="../images/logo.png" class="logo"/></td>
+            <td class="col half-page"><img src="../images/logo.png" alt="" class="logo"/></td>
             <td class="col half-page links">
                 <div>
                     www.clearchoice.nyc
@@ -321,7 +347,7 @@
         <tr>
             <td class="subject-general-score">
                 <div class="total-core-container">
-                    <div class=" total-score">
+                    <div class="total-score" style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(51 / 233 *360deg),var(--color-grey) calc(51 / 233 *360deg), var(--color-grey) 360deg);">
                         <div>Score</div>
                         <div>111</div>
                         <div>111 of 233</div>
@@ -330,19 +356,28 @@
 
                 <div class="partial-score-container">
                     <div class="title">Knowledge of the issues</div>
-                    <div>
-                        <div class="col partial-score">
-                            <div class="score-number">51</div>
-                            <div class="score-text">Mastered issues</div>
+                    <div style="margin-top:5mm; margin-bottom: 5mm;">
+                        <div class="col">
+                            <div class="partial-score" style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(51 / 233 *360deg),var(--color-grey) calc(51 / 233 *360deg), var(--color-grey) 360deg);">
+                                <div class="score-number">51</div>
+                                <div class="score-text">Mastered issues</div>
+                            </div>
                         </div>
-                        <div class="col partial-score">
-                            <div class="score-number">35</div>
-                            <div class="score-text">Issues for training</div>
+
+                        <div class="col">
+                            <div class="partial-score" style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(35 / 233 *360deg),var(--color-grey) calc(35 / 233 *360deg), var(--color-grey) 360deg);">
+                                <div class="score-number">35</div>
+                                <div class="score-text">Issues for training</div>
+                            </div>
                         </div>
-                        <div class="col partial-score">
-                            <div class="score-number">14</div>
-                            <div class="score-text">Unmanned issues</div>
+
+                        <div class="col">
+                            <div class="partial-score" style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(14 / 233 *360deg),var(--color-grey) calc(14 / 233 *360deg), var(--color-grey) 360deg);">
+                                <div class="score-number">14</div>
+                                <div class="score-text">Unmanned issues</div>
+                            </div>
                         </div>
+
                     </div>
                     <div class="title">Total issues: 42</div>
                 </div>
@@ -356,20 +391,20 @@
                 <div class="top-issues-section">
                     <span class="col badge red">34</span>
                     <span class="col">Plane Geometry and Trigonometry</span>
-                    <span class="col">Points Lost: <span class="col" style="color: var(--color-red)">4</span></span>
+                    <span class="col">Points Lost: <span class="col" style="color: var(--color-dark-grey)">4</span></span>
                     <span class="col">34 of 233</span>
                 </div>
                 <div class="top-issues-section">
                     <span class="col badge red">24</span>
                     <span class="col">Pre-Algebra and Elementary Algebra</span>
-                    <span class="col">Points Lost: <span class="col" style="color: var(--color-red)">4</span></span>
+                    <span class="col">Points Lost: <span class="col" style="color: var(--color-dark-grey)">4</span></span>
                     <span class="col">28 of 87</span>
                 </div>
 
                 <div class="top-issues-section">
                     <span class="col badge red">34</span>
                     <span class="col">Intermediate Algebra and Coordinate Geometry</span>
-                    <span class="col">Points Lost: <span class="col" style="color: var(--color-red)">2</span></span>
+                    <span class="col">Points Lost: <span class="col" style="color: var(--color-dark-grey)">2</span></span>
                     <span class="col">12 of 233</span>
                 </div>
 
@@ -383,7 +418,7 @@
                 <div>                <div class="top-issues-section">
                     <span class="col badge red">34</span>
                     <span class="col">Plane Geometry and Trigonometry</span>
-                    <span class="col">Points Lost: <span class="col" style="color: var(--color-red)">4</span></span>
+                    <span class="col">Points Lost: <span class="col" style="color: var(--color-dark-grey)">4</span></span>
                     <span class="col">34 of 233</span>
                 </div>
 
