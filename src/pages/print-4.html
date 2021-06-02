@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-    <title>Report</title>
+    <title>Report page 5</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
     <link href="./shared.css" rel="stylesheet">
     <link href="./print.css" rel="stylesheet">
     <style>
-
+        body {
+            font-family: "Open Sans", sans-serif;
+        }
         .subject-header, .subject-general-score {
             color: var(--color-print-black);
             width: 210mm;
@@ -83,7 +85,7 @@
         }
 
         .section-details {
-          border: 2px var(--color-grey) solid;
+            border: 2px var(--color-grey) solid;
             padding: 3mm 0;
             border-top: 2px solid var(--color-dark-grey);
             margin-bottom: 5mm;
@@ -164,16 +166,16 @@
             align-content: center;
             align-items: center;
             justify-content: center;
-            width: 200px;
-            height: 200px;
+            width: 220px;
+            height: 220px;
             border: 8px solid white;
             margin: 0;
             transform: rotate(180deg);
         }
 
         .total-score:before {
-            width: 184px;
-            height: 184px;
+            width: 204px;
+            height: 204px;
         }
 
         .partial-score {
@@ -183,8 +185,8 @@
             align-content: center;
             align-items: center;
             justify-content: center;
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             transform: rotate(180deg);
             font-size: 16px;
             text-align: center;
@@ -198,8 +200,8 @@
             content: "";
         }
         .partial-score:before{
-            width: 104px;
-            height: 104px;
+            width: 126px;
+            height: 126px;
         }
 
         .partial-score:before,
@@ -242,7 +244,7 @@
         <tr>
             <td class="subject-general-score">
                 <div class="total-core-container">
-                    <div class="total-score" style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(51 / 233 *360deg),var(--color-grey) calc(51 / 233 *360deg), var(--color-grey) 360deg);">
+                    <div class="total-score" style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(111 / 233 *360deg),var(--color-grey) calc(111 / 233 *360deg), var(--color-grey) 360deg);">
                         <div>Score</div>
                         <div>111</div>
                         <div>111 of 233</div>
@@ -262,14 +264,14 @@
                         <div class="col">
                             <div class="partial-score" style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(35 / 233 *360deg),var(--color-grey) calc(35 / 233 *360deg), var(--color-grey) 360deg);">
                                 <div class="score-number">35</div>
-                                <div class="score-text">Issues for training</div>
+                                <div class="score-text">Issues for<br /> training</div>
                             </div>
                         </div>
 
                         <div class="col">
                             <div class="partial-score" style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(14 / 233 *360deg),var(--color-grey) calc(14 / 233 *360deg), var(--color-grey) 360deg);">
                                 <div class="score-number">14</div>
-                                <div class="score-text">Unmanned issues</div>
+                                <div class="score-text">Unmanned<br /> issues</div>
                             </div>
                         </div>
 

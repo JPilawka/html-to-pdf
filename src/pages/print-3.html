@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Report</title>
+    <title>Report page 4</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
     <link href="./shared.css" rel="stylesheet">
     <link href="./print.css" rel="stylesheet">
 
     <style>
-
-        .subject {
-            width: 45mm;
-            color: var(--color-dark-grey);
-            border: 0;
+        body {
+            font-family: "Open Sans", sans-serif;
         }
 
         #scores td {vertical-align: top;}
@@ -23,54 +20,12 @@
             margin-right: 0
         }
 
-        .subject h3 {
-            text-align: center;
-            color: var(--color-print-black);
-            margin-bottom: 0;
-            margin-top: 0;
-            font-size: 20px;
-        }
         .labels, .question-row {
             font-size: 14px;
         }
 
-        .labels {
-            transform: rotate(-90deg);
-            padding-left: 3mm;
-            padding-top: 0.5px;
-        }
-
-        .labels span {
-            padding-top: 2mm;
-            padding-bottom: 1.2mm;
-        }
-
-         .labels span:nth-child(2), .labels span:nth-child(3){
-            padding-top: 3mm;
-            padding-bottom: 1.2mm;
-        }
-
-        .labels span:first-child {
-            padding-top: 1.2mm;
-
-        }
-
-        .labels span:last-child {
-            padding: 5mm 0;
-            margin-bottom: 0
-        }
-
-        .column-header {
-            padding: 3mm 3mm 0 ;
-            margin-bottom: 0;
-        }
         .column-header, .questions-container{
             border: 2px var(--color-grey) solid;
-        }
-        .questions-container {
-            padding: 5mm 3mm;
-            border-top: var(--color-dark-grey) 2px solid;
-            margin-top: 0;
         }
 
         .question-row {
@@ -157,10 +112,10 @@
                 <div class="column-header">
                     <h3>English</h3>
                     <div class="labels">
-                        <span>Question #</span>
-                        <span>Your Answer</span>
-                        <span>Correct</span>
-                        <span>Tags</span>
+                        <span><span>Question #</span></span>
+                        <span><span>Your Answer</span></span>
+                        <span><span>Correct</span></span>
+                        <span><span>Tags</span></span>
                     </div>
                 </div>
                 <div class="questions-container">
@@ -172,126 +127,58 @@
                     </div>
                     <div class="question-row">
                         <span>2</span>
-                        <span>A</span>
-                        <span>A</span>
-                        <span></span>
-                    </div>
-                    <div class="question-row">
-                        <span>3</span>
-                        <span>C</span>
-                        <span>C</span>
-                        <span></span>
-                    </div>
-                    <div class="question-row">
-                        <span>4</span>
-                        <span>D</span>
-                        <span>D</span>
-                        <span></span>
-                    </div>
-                    <div class="question-row">
-                        <span>5</span>
-                        <span>D</span>
-                        <span>D</span>
-                        <span></span>
-                    </div>
-                    <div class="question-row">
-                        <span>6</span>
-                        <span>D</span>
-                        <span>D</span>
-                        <span></span>
-                    </div>
-                    <div class="question-row">
-                        <span>7</span>
-                        <span>D</span>
-                        <span>D</span>
-                        <span></span>
-                    </div>
-                    <div class="question-row">
-                        <span>8</span>
-                        <span>D</span>
-                        <span>D</span>
-                        <span></span>
-                    </div>
-                </div>
-            </td>
-
-
-
-
-
-            <td class="col subject">
-                <div class="column-header">
-                    <h3>Math</h3>
-                    <div class="labels">
-                        <span>Question #</span>
-                        <span>Your Answer</span>
-                        <span>Correct</span>
-                        <span>Tags</span>
-                    </div>
-                </div>
-                <div class="questions-container">
-                    <div class="question-row">
-                        <span>1</span>
-                        <span style="background-color: var(--color-dark-grey)">B</span>
-                        <span>C</span>
-                        <span></span>
-                    </div>
-                    <div class="question-row">
-                        <span>2</span>
-                        <span>A</span>
+                        <span>&nbsp;</span>
                         <span>A</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>3</span>
-                        <span>C</span>
+                        <span>&nbsp;</span>
                         <span>C</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>4</span>
-                        <span>D</span>
+                        <span>&nbsp;</span>
                         <span>D</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>5</span>
-                        <span>D</span>
+                        <span>&nbsp;</span>
                         <span>D</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>6</span>
-                        <span>D</span>
+                        <span>&nbsp;</span>
                         <span>D</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>7</span>
-                        <span>D</span>
+                        <span>&nbsp;</span>
                         <span>D</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>8</span>
-                        <span>D</span>
+                        <span>&nbsp;</span>
                         <span>D</span>
                         <span></span>
                     </div>
                 </div>
             </td>
-
-
 
 
             <td class="col subject">
                 <div class="column-header">
                     <h3>Reading</h3>
                     <div class="labels">
-                        <span>Question #</span>
-                        <span>Your Answer</span>
-                        <span>Correct</span>
-                        <span>Tags</span>
+                        <span><span>Question #</span></span>
+                        <span><span>Your Answer</span></span>
+                        <span><span>Correct</span></span>
+                        <span><span>Tags</span></span>
                     </div>
                 </div>
                 <div class="questions-container">
@@ -303,43 +190,43 @@
                     </div>
                     <div class="question-row">
                         <span>2</span>
-                        <span>A</span>
+                        <span>&nbsp;</span>
                         <span>A</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>3</span>
-                        <span>C</span>
+                        <span>&nbsp;</span>
                         <span>C</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>4</span>
-                        <span>D</span>
+                        <span>&nbsp;</span>
                         <span>D</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>5</span>
-                        <span>D</span>
+                        <span>&nbsp;</span>
                         <span>D</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>6</span>
-                        <span>D</span>
+                        <span>&nbsp;</span>
                         <span>D</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>7</span>
-                        <span>D</span>
+                        <span>&nbsp;</span>
                         <span>D</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>8</span>
-                        <span>D</span>
+                        <span>&nbsp;</span>
                         <span>D</span>
                         <span></span>
                     </div>
@@ -365,81 +252,65 @@
             </td>
 
 
-
-            <td class="col subject">
+            <td class="col subject math">
                 <div class="column-header">
-                    <h3>Science</h3>
+                    <h3>Math</h3>
                     <div class="labels">
-                        <span>Question #</span>
-                        <span>Your Answer</span>
-                        <span>Correct</span>
-                        <span>Tags</span>
+                        <span><span>Question #</span></span>
+                        <span><span>Your Answer</span></span>
+                        <span><span>Correct</span></span>
+                        <span><span>Tags</span></span>
                     </div>
                 </div>
                 <div class="questions-container">
                     <div class="question-row">
                         <span>1</span>
-                        <span style="background-color: var(--color-dark-grey)">B</span>
-                        <span>C</span>
+                        <span style="background-color: var(--color-dark-grey)">0.66 + ...</span>
+                        <span>0.56</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>2</span>
-                        <span>A</span>
-                        <span>A</span>
+                        <span>&nbsp;</span>
+                        <span>45</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>3</span>
-                        <span>C</span>
-                        <span>C</span>
+                        <span>&nbsp;</span>
+                        <span>3456</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>4</span>
-                        <span>D</span>
-                        <span>D</span>
+                        <span>&nbsp</span>
+                        <span>0.89</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>5</span>
-                        <span>D</span>
-                        <span>D</span>
+                        <span>&nbsp;</span>
+                        <span>.903</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>6</span>
-                        <span>D</span>
-                        <span>D</span>
+                        <span>&nbsp;</span>
+                        <span>3/2</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>7</span>
-                        <span>D</span>
-                        <span>D</span>
+                        <span>&nbsp;</span>
+                        <span>1/34</span>
                         <span></span>
                     </div>
                     <div class="question-row">
                         <span>8</span>
-                        <span>D</span>
-                        <span>D</span>
+                        <span>&nbsp;</span>
+                        <span>3.89</span>
                         <span></span>
                     </div>
-                </div>
-                <div class="subject-legend">
-                    <div>
-                        <span>RS</span>
-                        <span>Research Summary</span>
-                    </div>
-                    <div>
-                        <span>CV</span>
-                        <span>Conflicting<br />Viewports</span>
-                    </div>
-                    <div>
-                        <span>DR</span>
-                        <span>Data Representation</span>
-                    </div>
-
                 </div>
             </td>
         </tr>
@@ -458,7 +329,7 @@
             </td>
         </tr>
 
-        <tr class="footer">
+        <tr class="footer font-poppins">
             <td class="col" style="width: 30%; text-align: left">
                 Doe, Matthew
             </td>

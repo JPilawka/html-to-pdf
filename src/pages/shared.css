@@ -14,6 +14,7 @@
     src: url('../fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype'),
     url('../fonts/Open_Sans/OpenSans-Light.ttf') format('truetype'),
     url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype'),
+    url('../fonts/Open_Sans/OpenSans-ExtraBold.ttf') format('truetype'),
     url('../fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
 }
 :root {
@@ -26,6 +27,7 @@
     --main-gradient: linear-gradient(90deg, var(--color-blue) 0%, var(--color-green) 100%);
     --color-red: red;
     --color-orange: orange;
+    --color-semi-transparent: rgba(255,255,255,0.4)
 }
 
 .circle {
@@ -74,7 +76,7 @@ tr {
     font-size: 14px;
     color: var(--color-dark-grey);
     font-weight: 500;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif !important;
 }
 
 .half-page {
@@ -104,15 +106,14 @@ tr {
 }
 
 body {
-    font-family: "Open Sans",sans-serif;
-    font-size: 24px; font-style: normal;
+    font-size: 24px;
+    font-style: normal;
     width: 210mm;
     height: 297mm;
     margin: 0;
     padding: 10mm 20mm 0 ;
     color: black;
 }
-
 #full-width-page {
     width: 250mm;
     margin: 0;
@@ -125,8 +126,8 @@ body {
 }
 
 body.first-page {
-    font-family: "Poppins", sans-serif;
-    font-size: 24px; font-style: normal;
+    font-size: 24px;
+    font-style: normal;
     width: 210mm;
     height: 297mm;
     margin: 0;
@@ -175,6 +176,86 @@ body.first-page {
 .partial-score-charts {
     margin-top:5mm;
     margin-bottom: 5mm;
+}
+
+.subject.math {
+    width: 58.5mm;
+}
+
+
+.labels {
+    position: relative;
+    padding-bottom: 5mm;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 2mm;
+}
+
+.labels span {
+    width: 31px;
+    height: 130px;
+    align-items: center;
+}
+
+.labels span span {
+    transform: translate(-50px, 50px) rotate(270deg) ;
+    width: 130px;
+    height: 31px;
+    align-self: center;
+}
+
+.math .question-row span:nth-child(2), .math .labels span:nth-child(2) {
+    width: 18mm;
+}
+.math .question-row span:nth-child(3), .math .labels span:nth-child(3) {
+    width: 12mm;
+
+}
+
+.math .labels span:nth-child(2) span{
+    padding-top:5mm;
+    padding-left: 5mm;
+}
+
+.labels span:nth-child(3) span {
+    padding-top: 1mm;
+    padding-left: 1mm;
+}
+
+.math .labels span:nth-child(3) span {
+    padding-left: 3mm;
+    padding-top: 3mm
+}
+
+.labels span:last-child span {
+    padding-top: 4mm;
+    padding-left: 4mm;
+}
+
+.column-header {
+    padding: 3mm 2mm 0 ;
+    margin-bottom: 0;
+}
+
+.subject {
+    min-width: 45mm;
+    color: var(--color-dark-grey);
+    border: 0;
+}
+
+.subject h3 {
+    text-align: center;
+    color: black;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.questions-container {
+    padding: 5mm 1mm 5mm 3mm;
+    border-top: var(--color-dark-grey) 2px solid;
+    margin-top: 0;
 }
 
 

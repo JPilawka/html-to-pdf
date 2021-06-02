@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Report page 4</title>
+    <title>Report page 5</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
     <link href="./shared.css" rel="stylesheet">
     <link href="./color.css" rel="stylesheet">
 
     <style>
-
+        body {
+            font-family: "Open Sans", sans-serif;
+        }
         .subject-header, .subject-general-score {
             color: white;
             background: var(--main-gradient);
@@ -167,14 +169,14 @@
         }
 
         .total-score {
-            width: 200px;
-            height: 200px;
+            width: 220px;
+            height: 220px;
             margin: 0;
         }
 
         .total-score:before {
-            width: 186px;
-            height: 186px;
+            width: 204px;
+            height: 204px;
             background: linear-gradient(90deg, #517C92 0%, #4A6DA7 100%);
         }
 
@@ -185,8 +187,8 @@
             align-content: center;
             align-items: center;
             justify-content: center;
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             transform: rotate(180deg);
             font-size: 16px;
             text-align: center;
@@ -199,8 +201,8 @@
 
         }
         .partial-score:before{
-            width: 104px;
-            height: 104px;
+            width: 126px;
+            height: 126px;
         }
         .partial-score:before,
         .partial-score:after,
@@ -216,7 +218,7 @@
             background: linear-gradient(90deg, #508577 0%, #4F7E85 100%);
         }
         #ps2:before {
-            background: linear-gradient(90deg, #508871 0%, #518872 100%);
+            background: linear-gradient(90deg,#54925F 0%, #518872 100%);
         }
         #ps3:before{
             background: linear-gradient(90deg, #619F5B 0%, #54925F 100%);
@@ -250,7 +252,7 @@
         <tr>
             <td class="subject-general-score">
                 <div class="total-core-container">
-                    <div class="total-score circle" style="background: conic-gradient(white 0deg, white calc(111 / 233 * 360deg), rgba(255, 255, 255, 0.5) calc(111 / 233 * 360deg), rgba(255, 255, 255, 0.5) 360deg);">
+                    <div class="total-score circle" style="background: conic-gradient(white 0deg, white calc(111 / 233 * 360deg), var(--color-semi-transparent) calc(111 / 233 * 360deg), var(--color-semi-transparent) 360deg);">
                         <div>Score</div>
                         <div>111</div>
                         <div>111 of 233</div>
@@ -262,23 +264,23 @@
                     <div class="partial-score-charts">
                         <div class="col">
 
-                            <div class="partial-score" id="ps1" style="background: conic-gradient(white 0deg, white calc(51 / 233 * 360deg), rgba(255, 255, 255, 0.5) calc(51 / 233 * 360deg), rgba(255, 255, 255, 0.5) 360deg);">
+                            <div class="partial-score" id="ps1" style="background: conic-gradient(var(--color-green) 0deg, var(--color-green) calc(51 / 233 * 360deg), var(--color-semi-transparent) calc(51 / 233 * 360deg), var(--color-semi-transparent) 360deg);">
                                 <div class="score-number">51</div>
                                 <div class="score-text">Mastered <br />issues</div>
                             </div>
                         </div>
                         <div class="col">
 
-                            <div class="partial-score" id="ps2" style="background: conic-gradient(white 0deg, white calc(35 / 233 * 360deg), rgba(255, 255, 255, 0.5) calc(35 / 233 * 360deg), rgba(255, 255, 255, 0.5) 360deg);">
+                            <div class="partial-score" id="ps2" style="background: conic-gradient(var(--color-orange) 0deg, var(--color-orange) calc(35 / 233 * 360deg), var(--color-semi-transparent) calc(35 / 233 * 360deg), var(--color-semi-transparent) 360deg);">
                                 <div class="score-number">35</div>
-                                <div class="score-text">Issues for training</div>
+                                <div class="score-text">Issues for <br /> training</div>
                             </div>
                         </div>
                         <div class="col">
 
-                            <div class="partial-score" id="ps3" style="background: conic-gradient(white 0deg, white calc(14 / 233 * 360deg), rgba(255, 255, 255, 0.5) calc(14 / 233 * 360deg), rgba(255, 255, 255, 0.5) 360deg);">
+                            <div class="partial-score" id="ps3" style="background: conic-gradient(var(--color-red) 0deg, var(--color-red) calc(14 / 233 * 360deg), var(--color-semi-transparent) calc(14 / 233 * 360deg), var(--color-semi-transparent) 360deg);">
                                 <div class="score-number">14</div>
-                                <div class="score-text">Unmanned issues</div>
+                                <div class="score-text">Unmanned<br /> issues</div>
                             </div>
                         </div>
                     </div>

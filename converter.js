@@ -20,11 +20,11 @@ async function convert(data, p, type) {
     const browser = await puppeteer.launch({ headless: true });
 
     const page = await browser.newPage();
-    await page.evaluateHandle('document.fonts.ready');
     await page.setContent(data.toString(), { waitUntil: 'networkidle2' });
+    await page.evaluateHandle('document.fonts.ready');
+    await page.content();
     await page.addStyleTag({path: './src/pages/shared.css'});
     await page.addStyleTag({path: `./src/pages/${type}.css`});
-    await page.content();
 
     await page.pdf({path: `./src/pages/${p}.pdf`, format: 'a4', printBackground: true, preferCSSPageSize: true });
     await browser.close();
