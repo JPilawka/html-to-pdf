@@ -4,66 +4,10 @@
     <title>Report</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
+    <link href="./shared.css" rel="stylesheet">
+    <link href="./print.css" rel="stylesheet">
+
     <style>
-        @font-face {
-            font-family: "Poppins";
-            src: url('../fonts/Poppins/Poppins-Black.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Light.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Medium.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-SemiBold.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Thin.ttf') format('truetype');
-
-        }
-        @font-face {
-            font-family: "Open Sans";
-            src: url('../fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype'),
-            url('../fonts/Open_Sans/OpenSans-Light.ttf') format('truetype'),
-            url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype'),
-            url('../fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
-        }
-
-        :root {
-            --color-grey: #eaeaea;
-            --color-blue: #4868b1;
-            --color-green: #58a13f;
-            --color-dark-grey: #8d8d8d;
-            --progress-bar-width: 50mm;
-            --color-print-black: #555555;
-        }
-        @page {
-            margin: 0;
-        }
-
-        body * {
-            display: block;
-        }
-        tr {
-            width: 100%
-        }
-        body {
-            font-family: "Open Sans",sans-serif;
-            font-size: 24px; font-style: normal;
-            width: 210mm;
-            height: 297mm;
-            margin: 0;
-            padding: 10mm 20mm 0 ;
-            color: var(--color-print-black);
-        }
-
-        .col {
-            display: inline-block;
-        }
-
-        a {
-            color: var(--color-print-black);
-            text-decoration: none;
-        }
-        a:visited {
-            color: var(--color-print-black);
-        }
-
         .circle {
             border-radius: 50%;
             display: flex;
@@ -92,11 +36,6 @@
             height: 182px;
         }
 
-        .circle div {
-            z-index: 1;
-            transform: rotate(180deg)
-        }
-
         .note {
             padding: 10mm;
             border-radius: 3mm;
@@ -104,35 +43,6 @@
             color: var(--color-print-black);
             position: relative;
         }
-        .half-page {
-            width: 49%
-        }
-
-        .quater-page {
-            width: 24%
-        }
-
-
-        #proctor-notes {
-            position: relative;
-        }
-
-        #proctor-notes svg {
-            position: absolute;
-            width: 40px;
-            top: -40px;
-            right: -20px;
-        }
-        /*.note:before {*/
-        /*    content: "";*/
-        /*    position: absolute;*/
-        /*    border-left: 24px solid var(--color-green);*/
-        /*    border-right: 12px solid transparent;*/
-        /*    border-top: 12px solid var(--color-green);*/
-        /*    border-bottom: 20px solid transparent;*/
-        /*    right: 32px;*/
-        /*    bottom: -32px;*/
-        /*}*/
 
         .total-score {
             font-size: 20px;
@@ -155,21 +65,6 @@
 
         .subject-score div:nth-child(2) {
             font-size: 36px;
-        }
-
-        .logo {
-            height: 10mm;
-            width: 10mm;
-            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-            filter: grayscale(100%);
-        }
-
-        .links {
-            font-size: 14px;
-            line-height: 24px;
-            text-align: right;
-            font-weight: 600;
-            color: var(--color-dark-grey);
         }
 
         .title {
@@ -261,24 +156,6 @@
             position: absolute;
             right: 2mm;
         }
-        .footer {
-            padding-top: 5mm;
-            border-top: 3px var(--color-grey) solid;
-            position: fixed;
-            bottom: 0;
-            width: 210mm;
-            background-color: white;
-            z-index: 2000;
-            height: 22mm;
-        }
-        .footer td {
-            margin: 0;
-            padding: 0;
-            font-size: 14px;
-            color: var(--color-dark-grey);
-            font-weight: 500;
-            font-family: "Poppins", sans-serif;
-        }
 
     </style>
 </head>
@@ -287,7 +164,7 @@
     <table>
         <tbody>
         <tr class="header">
-            <td class="col half-page"><img src="../images/logo.png" alt="" class="logo"/></td>
+            <td class="col half-page"><img src="../images/logo.png" alt="" class="logo greyscale"/></td>
             <td class="col half-page links">
                 <div>
                     www.clearchoice.nyc
@@ -310,7 +187,7 @@
 
             </td>
             <td class="col note">
-                <div id="proctor-notes" style="font-size: 16px; margin-bottom: 3mm; font-weight: 600">Proctor notes
+                <div id="proctor-notes">Proctor notes
                 <svg xmlns="http://www.w3.org/2000/svg" width="117.122" height="91.06" viewBox="0 0 117.122 91.06">
                     <path d="M22.294-178.666a114.691,114.691,0,0,1-7.222-39.564q0-22.922,12.089-37.209T62.8-269.726v22.294q-16.642,0-16.642,22.294v4.082H67.2v42.39Zm65,0A109.583,109.583,0,0,1,80.07-218.23q0-22.922,12.089-37.209T127.8-269.726v22.294q-16.956,0-16.956,22.294v4.082h21.352v42.39Z" transform="translate(132.194 -178.666) rotate(-180)" fill="#555"/>
                 </svg>

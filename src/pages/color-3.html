@@ -4,101 +4,10 @@
     <title>Report page 3</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
+    <link href="./shared.css" rel="stylesheet">
+    <link href="./color.css" rel="stylesheet">
+
     <style>
-        @font-face {
-            font-family: "Poppins";
-            src: url('../fonts/Poppins/Poppins-Black.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Light.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Medium.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-SemiBold.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Thin.ttf') format('truetype');
-
-        }
-        @font-face {
-            font-family: "Open Sans";
-            src: url('../fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype'),
-            url('../fonts/Open_Sans/OpenSans-Light.ttf') format('truetype'),
-            url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype'),
-            url('../fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
-        }
-        :root {
-            --color-grey: #eaeaea;
-            --color-blue: #4868b1;
-            --color-green: #58a13f;
-            --color-dark-grey: #8d8d8d;
-            --progress-bar-width: 50mm;
-        }
-
-        body * {
-            display: block;
-        }
-        @page {
-            margin: 0;
-        }
-        tr {
-            width: 100%
-        }
-        body {
-            font-family: "Open Sans",sans-serif;
-            /*font-family: "Poppins";*/
-            font-size: 24px; font-style: normal;
-            width: 210mm;
-            height: 297mm;
-            margin: 0;
-            padding: 10mm 20mm 0 ;
-            color: black;
-        }
-        .half-page {
-            width: 49%
-        }
-
-        .col {
-            display: inline-block;
-        }
-
-        a {
-            color: white;
-            text-decoration: none;
-        }
-        a:visited {
-            color: white;
-        }
-
-
-        .logo {
-            height: 10mm;
-            width: 10mm;
-        }
-
-        .links {
-            font-size: 14px;
-            line-height: 24px;
-            text-align: right;
-            font-weight: 600;
-            color: var(--color-dark-grey);
-        }
-
-        .footer {
-            padding-top: 5mm;
-            border-top: 3px var(--color-grey) solid;
-            position: fixed;
-            bottom: 0;
-            width: 210mm;
-            background-color: white;
-            z-index: 2000;
-            height: 22mm;
-        }
-        .footer td {
-            margin: 0;
-            padding: 0;
-            font-size: 14px;
-            color: var(--color-dark-grey);
-            font-weight: 500;
-            font-family: "Poppins",sans-serif;
-        }
-
         .subject {
             width: 45mm;
             color: var(--color-dark-grey);

@@ -4,56 +4,14 @@
     <title>Report page 1</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
+    <link href="./shared.css" rel="stylesheet">
+    <link href="./color.css" rel="stylesheet">
     <style>
-        @font-face {
-            font-family: "Poppins";
-           src: url('../fonts/Poppins/Poppins-Black.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Light.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Medium.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-SemiBold.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Thin.ttf') format('truetype');
-        }
-        @font-face {
-            font-family: "Open Sans";
-            src: url('../fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype'),
-            url('../fonts/Open_Sans/OpenSans-Light.ttf') format('truetype'),
-            url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype'),
-            url('../fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
-        }
-
-        :root {
-            --main-gradient: linear-gradient(90deg, var(--color-blue) 0%, var(--color-green) 100%);
-        }
-        body * {
-            display: block;
-        }
-        @page {
-            margin: 0;
-        }
         body {
-            font-family: "Poppins", sans-serif;
-            font-size: 24px; font-style: normal;
-            width: 210mm;
-            height: 297mm;
-            margin: 0;
-            padding: 0;
             color: white;
         }
         .header {
-            width: 100%;
-            display: block;
             background: linear-gradient(90deg, #4868b1 0%, #58a13f 100%);
-            height: 220mm;
-            padding: 10mm 20mm;
-            overflow: hidden;
-        }
-
-        .header tbody {
-            width: 100%;
-
-            display: block;
         }
         .date {
             font-weight: 500;
@@ -85,10 +43,7 @@
             display: block;
             background-color: white;
         }
-        .progress-ring__circle {
-            transform: rotate(-90deg);
-            transform-origin: 50% 50%;
-        }
+
         .list-item {
             margin-bottom: 5mm;
             line-height: 4mm;
@@ -103,29 +58,12 @@
             margin-bottom: 4mm;
         }
 
-        .logo {
-            height: 80px;
-            margin-bottom: 80px;
-            position: relative;
-            display: block;
-            left: 115mm;
-            background-image: url("../images/company-logo.png");
-        }
-
-        .score-circle {
+        .circle {
             height: 370px;
             width: 370px;
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
-            transform: rotate(180deg)
         }
 
-
-        .score-circle:before {
+        .circle:before {
             border-radius: 50%;
             content: "";
             width: 354px;
@@ -133,16 +71,11 @@
             background: linear-gradient(90deg,#58A040  0%, #4F827D 100%);
         }
 
-        .score-circle:before, .score-circle:after {
+        .circle:before, .circle:after {
             position: absolute;
         }
 
-        .score-circle div {
-            z-index: 1;
-            transform: rotate(180deg)
-        }
-
-        .score-circle #score-title{
+        .circle #score-title{
             font-size: 45px;
             font-weight: 500;
             line-height: 45px;
@@ -155,24 +88,13 @@
             display: inline-block;
             position: relative;
         }
-        .score-circle #score-number{
+        .circle #score-number{
             font-size: 120px;
             line-height: 140px;
         }
-        a {
-            color: white;
-            text-decoration: none;
-        }
-        a:visited {
-            color: white;
-        }
-        .font-poppins {
-            font-family: "Poppins", sans-serif;
-            font-style: normal;
-        }
     </style>
 </head>
-<body>
+<body class="first-page">
     <div class="page">
         <table class="header">
             <tbody>
@@ -180,7 +102,7 @@
                 <td>Mar.1, 2021</td>
             </tr>
             <tr >
-                <td ><img class="logo" alt="" src="../images/logo-color.png"/></td>
+                <td ><img id="logo" alt="" src="../images/logo-color.png"/></td>
             </tr>
             <tr>
                 <td class="font-poppins" style="font-weight:700">Company ACT diagnostics for</td>
@@ -201,7 +123,7 @@
 
                 </td>
                 <td style="width: 80mm; position: relative">
-                    <div class="score-circle" style="background: conic-gradient(white 0deg, white calc(72 / 233 * 360deg), rgba(255, 255, 255, 0.5) calc(72 / 233 * 360deg), rgba(255, 255, 255, 0.5) 360deg);">
+                    <div class="circle" style="background: conic-gradient(white 0deg, white calc(72 / 233 * 360deg), rgba(255, 255, 255, 0.5) calc(72 / 233 * 360deg), rgba(255, 255, 255, 0.5) 360deg);">
                         <div id="score-title">Score</div>
                         <div id="score-number">72</div>
                     </div>

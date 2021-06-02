@@ -7,22 +7,26 @@ const PRINT_REPORT_FILE = 'Report(print)';
 
 const colorPages = ['color-1','color-2','color-3','color-4']
 const printPages = ['print-1','print-2','print-3','print-4']
-async function printPDF(page) {
+async function printPDF(page, type) {
     try {
         const data = await fs.readFileSync(`./src/pages/${page}.html`)
-        await convert(data, page)
+        await convert(data, page, type)
     } catch(e) {
         console.warn(e)
     }
 }
 
-async function convert(data, p) {
+async function convert(data, p, type) {
     const browser = await puppeteer.launch({ headless: true });
 
     const page = await browser.newPage();
     await page.evaluateHandle('document.fonts.ready');
     await page.setContent(data.toString(), { waitUntil: 'networkidle2' });
     await page.content();
+    await page.addStyleTag({path: './src/pages/shared.css'});
+
+    await page.addStyleTag({path: `./src/pages/${type}.css`});
+
     await page.pdf({path: `./src/pages/${p}.pdf`, format: 'a4', printBackground: true, preferCSSPageSize: true });
     await browser.close();
     return true;
@@ -50,9 +54,9 @@ function clearFiles(array) {
     })
 }
 
-async function process(array) {
-    return array.map(async page => await printPDF(page));
+async function process(array, type) {
+    return array.map(async page => await printPDF(page, type));
 }
 
-process(colorPages).then(v => Promise.all(v)).then(p => mergePDFs(colorPages,COLOR_REPORT_FILE)).catch(e => console.error(e))
-process(printPages).then(v => Promise.all(v)).then(p => mergePDFs(printPages,PRINT_REPORT_FILE)).catch(e => console.error(e))
+process(colorPages, 'color').then(v => Promise.all(v)).then(p => mergePDFs(colorPages,COLOR_REPORT_FILE)).catch(e => console.error(e))
+process(printPages, 'print').then(v => Promise.all(v)).then(p => mergePDFs(printPages,PRINT_REPORT_FILE)).catch(e => console.error(e))

@@ -4,113 +4,13 @@
     <title>Report page 4</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
+    <link href="./shared.css" rel="stylesheet">
+    <link href="./color.css" rel="stylesheet">
+
     <style>
-        @font-face {
-            font-family: "Poppins";
-            src: url('../fonts/Poppins/Poppins-Black.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Light.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Medium.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-SemiBold.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Thin.ttf') format('truetype');
-
-        }
-        @font-face {
-            font-family: "Open Sans";
-            src: url('../fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype'),
-            url('../fonts/Open_Sans/OpenSans-Light.ttf') format('truetype'),
-            url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype'),
-            url('../fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
-        }
-        :root {
-            --color-grey: #eaeaea;
-            --color-blue: #4868b1;
-            --color-green: #58a13f;
-            --color-dark-grey: #8d8d8d;
-            --progress-bar-width: 50mm;
-            --main-gradient: linear-gradient(90deg, var(--color-blue) 0%, var(--color-green) 100%);
-            --color-red: red;
-            --color-orange: orange;
-
-        }
-        @page {
-            margin: 0;
-        }
-
-        body * {
-            display: block;
-        }
-        tr {
-            width: 100%
-        }
-        body {
-            font-family: "Open Sans",sans-serif;
-            font-size: 24px; font-style: normal;
-            width: 250mm;
-            height: 297mm;
-            margin: 0;
-            color: black;
-        }
-        .half-page {
-            width: 103.6mm;
-        }
-
-        .font-poppins {
-            font-family: "Poppins",sans-serif;
-            font-style: normal;
-        }
-        .col {
-            display: inline-block;
-        }
-
-        a {
-            color: white;
-            text-decoration: none;
-        }
-        a:visited {
-            color: white;
-        }
-
-
-        .logo {
-            height: 10mm;
-            width: 10mm;
-        }
-
-        .links {
-            font-size: 14px;
-            line-height: 24px;
-            text-align: right;
-            font-weight: 600;
-            color: var(--color-dark-grey);
-            padding: 0;
-        }
-
         .header {
             margin: 10mm 19mm 5mm 20mm;
             width: 210mm;
-        }
-
-        .footer {
-            padding-top: 5mm;
-            border-top: 3px var(--color-grey) solid;
-            position: fixed;
-            bottom: 0;
-            width: 210mm;
-            background-color: white;
-            z-index: 2000;
-            height: 22mm;
-            margin: 10mm 20mm 0 ;
-        }
-        .footer td {
-            margin: 0;
-            padding: 0;
-            font-size: 14px;
-            color: var(--color-dark-grey);
-            font-weight: 500;
-            font-family: "Poppins", sans-serif;
-
         }
 
         .subject-header, .subject-general-score {
@@ -193,8 +93,6 @@
             margin-bottom: 5mm;
         }
 
-
-
         .details-row{
             font-size: 14px;
             padding: 1.5mm 5mm;
@@ -263,16 +161,6 @@
             font-size: 18px;
         }
 
-        .circle {
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
-            transform: rotate(180deg)
-        }
-
         .circle:before {
             border-radius: 50%;
             content: "";
@@ -280,11 +168,6 @@
 
         .circle:before, .circle:after {
             position: absolute;
-        }
-
-        .circle > div {
-            z-index: 1;
-            transform: rotate(180deg);
         }
 
         .total-score {

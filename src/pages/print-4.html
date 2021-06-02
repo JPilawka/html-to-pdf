@@ -4,110 +4,12 @@
     <title>Report</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
+    <link href="./shared.css" rel="stylesheet">
+    <link href="./print.css" rel="stylesheet">
     <style>
-        @font-face {
-            font-family: "Poppins";
-            src: url('../fonts/Poppins/Poppins-Black.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Light.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Medium.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-SemiBold.ttf') format('truetype'),
-            url('../fonts/Poppins/Poppins-Thin.ttf') format('truetype');
-
-        }
-        @font-face {
-            font-family: "Open Sans";
-            src: url('../fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype'),
-            url('../fonts/Open_Sans/OpenSans-Light.ttf') format('truetype'),
-            url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype'),
-            url('../fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
-        }
-        :root {
-            --color-grey: #eaeaea;
-            --color-blue: #4868b1;
-            --color-green: #58a13f;
-            --color-dark-grey: #8d8d8d;
-            --progress-bar-width: 50mm;
-            --main-gradient: linear-gradient(90deg, var(--color-blue) 0%, var(--color-green) 100%);
-            --color-red: red;
-            --color-orange: orange;
-            --color-print-black: #555555;
-        }
-        @page {
-            margin: 0;
-        }
-
-        body * {
-            display: block;
-        }
-        tr {
-            width: 100%
-        }
-        body {
-            font-family: "Open Sans",sans-serif;
-            font-size: 24px; font-style: normal;
-            width: 250mm;
-            height: 297mm;
-            margin: 0;
-            color: var(--color-print-black);
-        }
-        .half-page {
-            width: 103.6mm;
-        }
-        .col {
-            display: inline-block;
-        }
-
-        a {
-            color: var(--color-print-black);
-            text-decoration: none;
-        }
-        a:visited {
-            color: var(--color-print-black);
-        }
-
-
-        .logo {
-            height: 10mm;
-            width: 10mm;
-            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-            filter: grayscale(100%);
-        }
-
-        .links {
-            font-size: 14px;
-            line-height: 24px;
-            text-align: right;
-            font-weight: 600;
-            color: var(--color-dark-grey);
-            padding: 0;
-        }
-
         .header {
             margin: 10mm 19mm 5mm 20mm;
             width: 210mm;
-        }
-
-        .footer {
-            padding-top: 5mm;
-            border-top: 3px var(--color-grey) solid;
-            position: fixed;
-            bottom: 0;
-            width: 210mm;
-            background-color: white;
-            z-index: 2000;
-            height: 22mm;
-            margin: 10mm 20mm 0 ;
-        }
-        .footer td {
-            margin: 0;
-            padding: 0;
-            font-size: 14px;
-            color: var(--color-dark-grey);
-            font-weight: 500;
-            font-family: "Poppins", sans-serif;
-
         }
 
         .subject-header, .subject-general-score {
@@ -306,7 +208,6 @@
             height: 104px;
         }
 
-
         .partial-score:before,
         .partial-score:after,
         .total-score:before,
@@ -326,7 +227,7 @@
     <table>
         <tbody>
         <tr class="header">
-            <td class="col half-page"><img src="../images/logo.png" alt="" class="logo"/></td>
+            <td class="col half-page"><img src="../images/logo.png" alt="" class="logo greyscale"/></td>
             <td class="col half-page links">
                 <div>
                     www.clearchoice.nyc

@@ -1,0 +1,19 @@
+@import "shared.css";
+
+
+a {
+    color: var(--color-print-black);
+    text-decoration: none;
+}
+a:visited {
+    color: var(--color-print-black);
+}
+
+.greyscale {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+body {
+    color: var(--color-print-black);
+}
