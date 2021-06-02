@@ -78,7 +78,7 @@ tr {
 }
 
 .half-page {
-    width: 103.6mm;
+    width: 103.5mm;
 }
 
 .quater-page {
@@ -113,7 +113,18 @@ body {
     color: black;
 }
 
-.first-page {
+#full-width-page {
+    width: 250mm;
+    margin: 0;
+    padding: 10mm 0 0 ;
+}
+
+#full-width-page .indoc-header, #full-width-page .footer {
+    margin-left: 20mm;
+    margin-right: 20mm;
+}
+
+body.first-page {
     font-family: "Poppins", sans-serif;
     font-size: 24px; font-style: normal;
     width: 210mm;
@@ -156,3 +167,14 @@ body {
     display: block;
     left: 115mm;
 }
+
+.indoc-header {
+    margin: 10mm 19mm 5mm 0;
+    width: 210mm;
+}
+.partial-score-charts {
+    margin-top:5mm;
+    margin-bottom: 5mm;
+}
+
+

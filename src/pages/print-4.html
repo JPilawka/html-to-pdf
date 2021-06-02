@@ -7,10 +7,6 @@
     <link href="./shared.css" rel="stylesheet">
     <link href="./print.css" rel="stylesheet">
     <style>
-        .header {
-            margin: 10mm 19mm 5mm 20mm;
-            width: 210mm;
-        }
 
         .subject-header, .subject-general-score {
             color: var(--color-print-black);
@@ -85,14 +81,13 @@
             background-color: var(--color-grey);
             color: var(--color-print-black)
         }
+
         .section-details {
           border: 2px var(--color-grey) solid;
             padding: 3mm 0;
             border-top: 2px solid var(--color-dark-grey);
             margin-bottom: 5mm;
         }
-
-
 
         .details-row{
             font-size: 14px;
@@ -201,7 +196,6 @@
             border-radius: 50%;
             background: white;
             content: "";
-
         }
         .partial-score:before{
             width: 104px;
@@ -215,18 +209,18 @@
             position: absolute;
         }
 
-        .partial-score div , .total-score div{
+        .partial-score div, .total-score div{
             z-index: 10;
             transform: rotate(180deg)
         }
 
     </style>
 </head>
-<body>
+<body id="full-width-page">
 <div class="page">
     <table>
         <tbody>
-        <tr class="header">
+        <tr class="indoc-header">
             <td class="col half-page"><img src="../images/logo.png" alt="" class="logo greyscale"/></td>
             <td class="col half-page links">
                 <div>
@@ -257,11 +251,11 @@
 
                 <div class="partial-score-container">
                     <div class="title">Knowledge of the issues</div>
-                    <div style="margin-top:5mm; margin-bottom: 5mm;">
+                    <div class="partial-score-charts">
                         <div class="col">
                             <div class="partial-score" style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(51 / 233 *360deg),var(--color-grey) calc(51 / 233 *360deg), var(--color-grey) 360deg);">
                                 <div class="score-number">51</div>
-                                <div class="score-text">Mastered issues</div>
+                                <div class="score-text">Mastered<br /> issues</div>
                             </div>
                         </div>
 

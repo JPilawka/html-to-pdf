@@ -8,10 +8,6 @@
     <link href="./color.css" rel="stylesheet">
 
     <style>
-        .header {
-            margin: 10mm 19mm 5mm 20mm;
-            width: 210mm;
-        }
 
         .subject-header, .subject-general-score {
             color: white;
@@ -183,20 +179,39 @@
         }
 
         .partial-score {
+            border-radius: 50%;
+            display: inline-flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
             width: 120px;
             height: 120px;
+            transform: rotate(180deg);
             font-size: 16px;
             text-align: center;
+            font-weight: 400;
             margin-right: 5mm;
-            margin-top: 5mm;
-            margin-bottom: 5mm;
-            display: inline-flex;
         }
-        .partial-score:before {
-            width: 110px;
-            height: 110px;
-        }
+        .partial-score:before, .total-score:before {
+            border-radius: 50%;
+            content: "";
 
+        }
+        .partial-score:before{
+            width: 104px;
+            height: 104px;
+        }
+        .partial-score:before,
+        .partial-score:after,
+        .total-score:before,
+        .total-score:after {
+            position: absolute;
+        }
+        .partial-score div , .total-score div{
+            z-index: 10;
+            transform: rotate(180deg)
+        }
         #ps1:before {
             background: linear-gradient(90deg, #508577 0%, #4F7E85 100%);
         }
@@ -209,11 +224,11 @@
 
     </style>
 </head>
-<body>
+<body id="full-width-page">
 <div class="page">
     <table>
         <tbody>
-        <tr class="header">
+        <tr class="indoc-header">
             <td class="col half-page"><img alt="" src="../images/logo.png" class="logo"/></td>
             <td class="col half-page links">
                 <div>
@@ -245,17 +260,26 @@
                 <div class="partial-score-container">
                     <div class="title">Knowledge of the issues</div>
                     <div class="partial-score-charts">
-                        <div class="col partial-score circle" id="ps1" style="background: conic-gradient(white 0deg, white calc(51 / 233 * 360deg), rgba(255, 255, 255, 0.5) calc(51 / 233 * 360deg), rgba(255, 255, 255, 0.5) 360deg);">
-                            <div class="score-number">51</div>
-                            <div class="score-text">Mastered issues</div>
+                        <div class="col">
+
+                            <div class="partial-score" id="ps1" style="background: conic-gradient(white 0deg, white calc(51 / 233 * 360deg), rgba(255, 255, 255, 0.5) calc(51 / 233 * 360deg), rgba(255, 255, 255, 0.5) 360deg);">
+                                <div class="score-number">51</div>
+                                <div class="score-text">Mastered <br />issues</div>
+                            </div>
                         </div>
-                        <div class="col partial-score circle" id="ps2" style="background: conic-gradient(white 0deg, white calc(35 / 233 * 360deg), rgba(255, 255, 255, 0.5) calc(35 / 233 * 360deg), rgba(255, 255, 255, 0.5) 360deg);">
-                            <div class="score-number">35</div>
-                            <div class="score-text">Issues for training</div>
+                        <div class="col">
+
+                            <div class="partial-score" id="ps2" style="background: conic-gradient(white 0deg, white calc(35 / 233 * 360deg), rgba(255, 255, 255, 0.5) calc(35 / 233 * 360deg), rgba(255, 255, 255, 0.5) 360deg);">
+                                <div class="score-number">35</div>
+                                <div class="score-text">Issues for training</div>
+                            </div>
                         </div>
-                        <div class="col partial-score circle" id="ps3" style="background: conic-gradient(white 0deg, white calc(14 / 233 * 360deg), rgba(255, 255, 255, 0.5) calc(14 / 233 * 360deg), rgba(255, 255, 255, 0.5) 360deg);">
-                            <div class="score-number">14</div>
-                            <div class="score-text">Unmanned issues</div>
+                        <div class="col">
+
+                            <div class="partial-score" id="ps3" style="background: conic-gradient(white 0deg, white calc(14 / 233 * 360deg), rgba(255, 255, 255, 0.5) calc(14 / 233 * 360deg), rgba(255, 255, 255, 0.5) 360deg);">
+                                <div class="score-number">14</div>
+                                <div class="score-text">Unmanned issues</div>
+                            </div>
                         </div>
                     </div>
                     <div class="title">Total issues: 42</div>
