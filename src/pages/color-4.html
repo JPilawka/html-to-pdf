@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Report</title>
+    <title>Report page 4</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
     <style>
@@ -263,34 +263,65 @@
             font-size: 18px;
         }
 
-        .total-score {
-            width: 200px;
-            height: 200px;
+        .circle {
+            border-radius: 50%;
             display: flex;
             flex-direction: column;
             align-content: center;
             align-items: center;
             justify-content: center;
+            transform: rotate(180deg)
+        }
+
+        .circle:before {
             border-radius: 50%;
-            border: 8px solid white;
+            content: "";
+        }
+
+        .circle:before, .circle:after {
+            position: absolute;
+        }
+
+        .circle > div {
+            z-index: 1;
+            transform: rotate(180deg);
+        }
+
+        .total-score {
+            width: 200px;
+            height: 200px;
             margin: 0;
+        }
+
+        .total-score:before {
+            width: 186px;
+            height: 186px;
+            background: linear-gradient(90deg, #517C92 0%, #4A6DA7 100%);
         }
 
         .partial-score {
             width: 120px;
             height: 120px;
-            display: inline-flex;
-            flex-direction: column;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            border: 8px solid white;
             font-size: 16px;
             text-align: center;
             margin-right: 5mm;
             margin-top: 5mm;
             margin-bottom: 5mm;
+            display: inline-flex;
+        }
+        .partial-score:before {
+            width: 110px;
+            height: 110px;
+        }
+
+        #ps1:before {
+            background: linear-gradient(90deg, #508577 0%, #4F7E85 100%);
+        }
+        #ps2:before {
+            background: linear-gradient(90deg, #508871 0%, #518872 100%);
+        }
+        #ps3:before{
+            background: linear-gradient(90deg, #619F5B 0%, #54925F 100%);
         }
 
     </style>
@@ -321,7 +352,7 @@
         <tr>
             <td class="subject-general-score">
                 <div class="total-core-container">
-                    <div class=" total-score">
+                    <div class="total-score circle" style="background: conic-gradient(white 0deg, white calc(111 / 233 * 360deg), rgba(255, 255, 255, 0.5) calc(111 / 233 * 360deg), rgba(255, 255, 255, 0.5) 360deg);">
                         <div>Score</div>
                         <div>111</div>
                         <div>111 of 233</div>
@@ -330,16 +361,16 @@
 
                 <div class="partial-score-container">
                     <div class="title">Knowledge of the issues</div>
-                    <div>
-                        <div class="col partial-score">
+                    <div class="partial-score-charts">
+                        <div class="col partial-score circle" id="ps1" style="background: conic-gradient(white 0deg, white calc(51 / 233 * 360deg), rgba(255, 255, 255, 0.5) calc(51 / 233 * 360deg), rgba(255, 255, 255, 0.5) 360deg);">
                             <div class="score-number">51</div>
                             <div class="score-text">Mastered issues</div>
                         </div>
-                        <div class="col partial-score">
+                        <div class="col partial-score circle" id="ps2" style="background: conic-gradient(white 0deg, white calc(35 / 233 * 360deg), rgba(255, 255, 255, 0.5) calc(35 / 233 * 360deg), rgba(255, 255, 255, 0.5) 360deg);">
                             <div class="score-number">35</div>
                             <div class="score-text">Issues for training</div>
                         </div>
-                        <div class="col partial-score">
+                        <div class="col partial-score circle" id="ps3" style="background: conic-gradient(white 0deg, white calc(14 / 233 * 360deg), rgba(255, 255, 255, 0.5) calc(14 / 233 * 360deg), rgba(255, 255, 255, 0.5) 360deg);">
                             <div class="score-number">14</div>
                             <div class="score-text">Unmanned issues</div>
                         </div>

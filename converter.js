@@ -22,9 +22,8 @@ async function convert(data, p) {
     const page = await browser.newPage();
     await page.evaluateHandle('document.fonts.ready');
     await page.setContent(data.toString(), { waitUntil: 'networkidle2' });
-    // await page.pdf({format: 'a4' });
-    await page.pdf({path: `./src/pages/${p}.pdf`, format: 'a4', printBackground: true });
-    // fs.writeFile('file1.pdf', pdf, (err, dat) => console.log(err, dat))
+    await page.content();
+    await page.pdf({path: `./src/pages/${p}.pdf`, format: 'a4', printBackground: true, preferCSSPageSize: true });
     await browser.close();
     return true;
 }
