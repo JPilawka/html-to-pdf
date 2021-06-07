@@ -6,4 +6,8 @@ yarn
 
 
 to start:
-node converste.js
+for individual reports: 
+node individual-report.js
+
+for class reports:
+node class-report.js

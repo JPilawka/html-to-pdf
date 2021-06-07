@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "autoprefixer": "^10.2.6",
     "easy-pdf-merge": "^0.2.6",
     "puppeteer": "^9.1.1"
   },
   "scripts": {
-    "start": "npm start"
+    "start": "npm start",
   },
   "eslintConfig": {
     "extends": [
