@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Report page 1</title>
+    <title>Print 1</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
     <link href="./shared.css" rel="stylesheet">
-    <link href="./color.css" rel="stylesheet">
+    <link href="./print.css" rel="stylesheet">
+
     <style>
         body {
-            color: white;
+            color: var(--color-print-black);
             font-family: "Poppins", sans-serif;
         }
         .header {
-            background: linear-gradient(90deg, #4868b1 0%, #58a13f 100%);
-            color: #fff;
+            border-bottom: var(--color-print-black) 1px solid;
         }
+
         .date {
             font-weight: 500;
             font-size: 20px;
@@ -45,7 +46,6 @@
             display: block;
             background-color: white;
         }
-
         .list-item {
             margin-bottom: 5mm;
             line-height: 4mm;
@@ -61,16 +61,16 @@
         }
 
         .circle {
-            height: 370px;
-            width: 370px;
+            height: 103mm;
+            width: 103mm;
         }
 
         .circle:before {
-            border-radius: 50%;
+            width: 98mm;
+            height: 98mm;
+            background: white;
             content: "";
-            width: 354px;
-            height: 354px;
-            background: linear-gradient(90deg,#58A040  0%, #4F827D 100%);
+            border-radius: 50%;
         }
 
         .circle:before, .circle:after {
@@ -80,7 +80,13 @@
         .circle #score-title{
             font-size: 45px;
             font-weight: 500;
-            line-height: 45px;
+            line-height: 45px
+        }
+
+        #score-number, #score-title {
+            z-index: 10;
+            color: var(--color-print-black);
+            transform: rotate(180deg)
         }
         .score-row {
             margin-top: 10mm;
@@ -94,6 +100,7 @@
             font-size: 120px;
             line-height: 140px;
         }
+
     </style>
 </head>
 <body class="first-page">
@@ -104,7 +111,7 @@
                 <td class="font-poppins">Mar.1, 2021</td>
             </tr>
             <tr >
-                <td ><img id="logo" alt="" src="../images/logo-color.png"/></td>
+                <td ><img class="greyscale" id="logo" alt="" src="../images/logo-color.png"/></td>
             </tr>
             <tr>
                 <td class="font-poppins" style="font-weight:700">Company ACT diagnostics for</td>
@@ -115,8 +122,8 @@
                 </td>
             </tr>
             <tr class="score-row">
-                <td style="width: 80mm; font-size: 16px;position: relative;">
-                    <div style="margin-top: 50mm">
+                <td style="width: 80mm; font-size: 16px;position: relative; font-weight: 500">
+                    <div style="margin-top: 30mm">
                         <a href="#">www.clearchoice.nyc</a>
                     </div>
                     <div >
@@ -125,7 +132,7 @@
 
                 </td>
                 <td style="width: 80mm; position: relative">
-                    <div class="circle" style="background: conic-gradient(white 0deg, white calc(72 / 233 * 360deg), var(--color-semi-transparent) calc(72 / 233 * 360deg), var(--color-semi-transparent) 360deg);">
+                    <div class="circle" style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(72 / 233 * 360deg), var(--color-grey) calc(72 / 233 * 360deg), var(--color-grey) 360deg);">
                         <div id="score-number">72</div>
                         <div id="score-title">Score</div>
                     </div>

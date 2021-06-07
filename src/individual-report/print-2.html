@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Report</title>
+    <title>Print 2</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
     <link href="./shared.css" rel="stylesheet">
@@ -52,6 +52,7 @@
             width: 200px;
             height: 200px;
             margin: auto 10mm;
+            font-weight: 300;
         }
 
 
@@ -64,32 +65,27 @@
             height: 150px;
             margin: auto;
             font-size: 16px;
+            font-weight: 300;
         }
 
         .subject-score div:nth-child(2) {
             font-size: 36px;
         }
-
-        .title {
-           font-weight: 700;
-            font-size: 20px;
-            margin-top: 10mm;
-            margin-bottom: 10mm;
-        }
         #score-table {
-            border: 2px var(--color-grey) solid;
+            border: 1px var(--color-mid-grey) solid;
             font-size: 14px;
             color: var(--color-dark-grey);
             padding-bottom: 5mm;
+            font-weight: 300;
         }
 
         #score-table thead {
-            border-bottom: 2px solid var(--color-dark-grey);
+            border-bottom: 1px solid black;
             margin-bottom: 2mm;
         }
         #score-table thead td{
             padding: 3mm 0;
-            font-weight: 600;
+            font-weight: 400;
 
         }
 
@@ -115,18 +111,12 @@
         }
 
         .best-in-column {
-            background-color: white;
+            background-color: var(--color-grey);
         }
 
         .row span {
             display: inline-block;
         }
-
-        .number-stats {
-            width: 10mm;
-            text-align: center;
-        }
-
         .graphic-stats {
             width: 80mm;
         }
@@ -166,7 +156,7 @@
 <div class="page">
     <table>
         <tbody>
-        <tr class="indoc-header ">
+        <tr class="indoc-header">
             <td class="col half-page"><img src="../images/logo.png" alt="" class="logo greyscale"/></td>
             <td class="col half-page links">
                 <div>
@@ -182,7 +172,7 @@
         </tr>
         <tr>
             <td class="col">
-                <div  class="circle total-score" style="background: conic-gradient(var(--color-print-black) 180deg, var(--color-print-black) calc(180deg + 30deg),var(--color-grey) calc(180deg + 30deg), var(--color-grey) 360deg);">
+                <div  class="circle total-score" style="background: conic-gradient(var(--color-print-black) 0deg, var(--color-print-black) calc(72 /233 * 360deg),var(--color-grey) calc(72 /233 * 360deg), var(--color-grey) 360deg);">
                     <div>72 of 223</div>
                     <div>72</div>
                     <div>Total Score</div>
@@ -192,7 +182,7 @@
             <td class="col note">
                 <div id="proctor-notes">Proctor notes
                 <svg xmlns="http://www.w3.org/2000/svg" width="117.122" height="91.06" viewBox="0 0 117.122 91.06">
-                    <path d="M22.294-178.666a114.691,114.691,0,0,1-7.222-39.564q0-22.922,12.089-37.209T62.8-269.726v22.294q-16.642,0-16.642,22.294v4.082H67.2v42.39Zm65,0A109.583,109.583,0,0,1,80.07-218.23q0-22.922,12.089-37.209T127.8-269.726v22.294q-16.956,0-16.956,22.294v4.082h21.352v42.39Z" transform="translate(132.194 -178.666) rotate(-180)" fill="#555"/>
+                    <path d="M22.294-178.666a114.691,114.691,0,0,1-7.222-39.564q0-22.922,12.089-37.209T62.8-269.726v22.294q-16.642,0-16.642,22.294v4.082H67.2v42.39Zm65,0A109.583,109.583,0,0,1,80.07-218.23q0-22.922,12.089-37.209T127.8-269.726v22.294q-16.956,0-16.956,22.294v4.082h21.352v42.39Z" transform="translate(132.194 -178.666) rotate(-180)" fill="#8d8d8d"/>
                 </svg>
                 </div>
 
@@ -208,7 +198,7 @@
         </tr>
         <tr style="margin-top: 20mm; margin-bottom: 10mm">
             <td class="col quater-page">
-                <div  class="circle subject-score" style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(141 / 233 * 360deg),var(--color-grey) calc(141 / 233 * 360deg), var(--color-grey) 360deg);">
+                <div  class="circle subject-score" style="background: conic-gradient(var(--color-mid-grey) 0deg, var(--color-mid-grey) calc(141 / 233 * 360deg),var(--color-grey) calc(141 / 233 * 360deg), var(--color-grey) 360deg);">
                     <div>141 of 223</div>
                     <div>141</div>
                     <div>English</div>
@@ -216,7 +206,7 @@
 
             </td>
             <td class="col quater-page">
-                <div  class="circle subject-score" style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(22 / 97 * 360deg),var(--color-grey) calc(22 / 97 * 360deg), var(--color-grey) 360deg);">
+                <div  class="circle subject-score" style="background: conic-gradient(var(--color-mid-grey) 0deg, var(--color-mid-grey) calc(22 / 97 * 360deg),var(--color-grey) calc(22 / 97 * 360deg), var(--color-grey) 360deg);">
                     <div>22 of 97</div>
                     <div>22</div>
                     <div>Math</div>
@@ -224,7 +214,7 @@
 
             </td>
             <td class="col quater-page">
-                <div  class="circle subject-score" style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(145 / 233 *360deg),var(--color-grey) calc(145 / 233 *360deg), var(--color-grey) 360deg);">
+                <div  class="circle subject-score" style="background: conic-gradient(var(--color-mid-grey) 0deg, var(--color-mid-grey) calc(145 / 233 *360deg),var(--color-grey) calc(145 / 233 *360deg), var(--color-grey) 360deg);">
                     <div>145 of 223</div>
                     <div>145</div>
                     <div>Reading</div>
@@ -232,7 +222,7 @@
 
             </td>
             <td class="col quater-page">
-                <div  class="circle subject-score " style="background: conic-gradient(var(--color-dark-grey) 0deg, var(--color-dark-grey) calc(72 / 233 *360deg),var(--color-grey) calc(72 / 233 *360deg), var(--color-grey) 360deg);">
+                <div  class="circle subject-score " style="background: conic-gradient(var(--color-mid-grey) 0deg, var(--color-mid-grey) calc(72 / 233 *360deg),var(--color-grey) calc(72 / 233 *360deg), var(--color-grey) 360deg);">
                     <div>72 of 223</div>
                     <div>72</div>
                     <div>Science</div>
@@ -358,7 +348,7 @@
 
                 </tbody>
             </table>
-            <div class="row" style="font-size: 14px; margin-top: 5mm">
+            <div class="row" style="font-size: 14px; margin-top: 5mm;font-weight: 300">
                 <span class="best-score-number" style="font-weight: 500; margin-right: 2mm">34</span>
                 <span style="color: var(--color-dark-grey)">Personal Best</span>
             </div>

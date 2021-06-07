@@ -1,32 +1,14 @@
-@font-face {
-    font-family: "Poppins";
-    src: url('../fonts/Poppins/Poppins-Black.ttf') format('truetype'),
-    url('../fonts/Poppins/Poppins-Bold.ttf') format('truetype'),
-    url('../fonts/Poppins/Poppins-Light.ttf') format('truetype'),
-    url('../fonts/Poppins/Poppins-Medium.ttf') format('truetype'),
-    url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype'),
-    url('../fonts/Poppins/Poppins-SemiBold.ttf') format('truetype'),
-    url('../fonts/Poppins/Poppins-Thin.ttf') format('truetype');
-
-}
-@font-face {
-    font-family: "Open Sans";
-    src: url('../fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype'),
-    url('../fonts/Open_Sans/OpenSans-Light.ttf') format('truetype'),
-    url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype'),
-    url('../fonts/Open_Sans/OpenSans-ExtraBold.ttf') format('truetype'),
-    url('../fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
-}
 :root {
     --color-grey: #eaeaea;
-    --color-blue: #4868b1;
-    --color-green: #58a13f;
-    --color-dark-grey: #8d8d8d;
+    --color-blue: #4e72aa;
+    --color-green: #79ae6d;
+    --color-dark-grey: #3a3a3a;
+    --color-mid-grey: #8d8d8d;
     --color-print-black: #555555;
     --progress-bar-width: 50mm;
     --main-gradient: linear-gradient(90deg, var(--color-blue) 0%, var(--color-green) 100%);
-    --color-red: red;
-    --color-orange: orange;
+    --color-red: #e35043;
+    --color-orange: #f09319;
     --color-semi-transparent: rgba(255,255,255,0.4)
 }
 
@@ -75,7 +57,7 @@ tr {
     padding: 0;
     font-size: 14px;
     color: var(--color-dark-grey);
-    font-weight: 500;
+    font-weight: 300;
     font-family: "Poppins", sans-serif !important;
 }
 
@@ -91,8 +73,9 @@ tr {
     font-size: 14px;
     line-height: 24px;
     text-align: right;
-    font-weight: 600;
+    font-weight: 300;
     color: var(--color-dark-grey);
+    font-family: "Poppins", sans-serif;
 }
 
 .font-poppins {
@@ -205,17 +188,17 @@ body.first-page {
     align-self: center;
 }
 
-.math .question-row span:nth-child(2), .math .labels span:nth-child(2) {
+.math .question-row span:nth-child(3), .math .labels span:nth-child(3) {
     width: 18mm;
 }
-.math .question-row span:nth-child(3), .math .labels span:nth-child(3) {
+.math .question-row span:nth-child(2), .math .labels span:nth-child(2) {
     width: 12mm;
 
 }
 
 .math .labels span:nth-child(2) span{
-    padding-top:5mm;
-    padding-left: 5mm;
+    padding-top:3mm;
+    padding-left: 3mm;
 }
 
 .labels span:nth-child(3) span {
@@ -224,8 +207,8 @@ body.first-page {
 }
 
 .math .labels span:nth-child(3) span {
-    padding-left: 3mm;
-    padding-top: 3mm
+    padding-left: 5mm;
+    padding-top: 5mm
 }
 
 .labels span:last-child span {
@@ -250,12 +233,56 @@ body.first-page {
     margin-bottom: 0;
     margin-top: 0;
     font-size: 20px;
+    font-weight: 400;
 }
 
 .questions-container {
     padding: 5mm 1mm 5mm 3mm;
-    border-top: var(--color-dark-grey) 2px solid;
     margin-top: 0;
 }
 
+.subject-general-score, .partial-score-container {
+    font-weight: 300
+}
 
+.partial-score div:last-child {
+    font-size: 30px;
+}
+.partial-score div:first-child {
+    font-size: 14px;
+}
+
+.total-core-container .total-score div:nth-child(2) {
+    font-size: 48px;
+}
+
+.section-details {
+    font-weight: 300;
+}
+
+.question-row span:nth-child(2) {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 22px;
+    margin-top: 10mm;
+    margin-bottom: 10mm;
+    font-family: "Poppins", sans-serif;
+}
+
+.partial-score-container-title {
+    font-size: 18px;
+}
+
+.number-stats {
+    width: 10mm;
+    text-align: center;
+    padding: 0 2px;
+}
+
+.font-semi {
+    font-weight: 400;
+}

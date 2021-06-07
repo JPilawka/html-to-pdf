@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 <head>
-    <title>Report page 5</title>
+    <title>Print 4</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
     <link href="./shared.css" rel="stylesheet">
-    <link href="./color.css" rel="stylesheet">
-
+    <link href="./print.css" rel="stylesheet">
     <style>
         body {
             font-family: "Open Sans", sans-serif;
         }
         .subject-header, .subject-general-score {
-            color: white;
-            background: var(--main-gradient);
+            color: var(--color-print-black);
             width: 210mm;
             margin: 0;
             padding: 5mm 20mm;
@@ -22,7 +20,7 @@
         .subject-header {
             font-family: "Poppins", sans-serif;
             font-weight: 500;
-            border-bottom: white solid 2px;
+            border-bottom: var(--color-dark-grey) solid 2px;
         }
         .subject-general-score {
             top: 44.1mm
@@ -41,7 +39,7 @@
         }
 
         .top-issues-section {
-            background-color: var(--color-grey);
+            border: 2px var(--color-grey) solid;
             font-size: 16px;
             font-weight: 600;
             padding: 2mm 5mm;
@@ -74,20 +72,22 @@
         }
 
         .red {
-            background-color: var(--color-red);
+            background-color: var(--color-print-black);
         }
 
         .green {
-            background-color: var(--color-green);
+            background-color: var(--color-mid-grey);
         }
 
         .orange {
-            background-color: var(--color-orange);
-        }
-        .section-details {
             background-color: var(--color-grey);
+            color: var(--color-print-black)
+        }
+
+        .section-details {
+            border: 2px var(--color-grey) solid;
             padding: 3mm 0;
-            border-top: 2px solid var(--color-dark-grey);
+            border-top: 1px solid var(--color-dark-grey);
             margin-bottom: 5mm;
         }
 
@@ -119,12 +119,12 @@
             top: 1.5mm
         }
         .progress-bar-background {
-            background-color: white;
+            background-color: var(--color-grey);
             width: var(--progress-bar-width);
         }
 
         .progress-bar-front {
-            background-color: var(--color-blue);
+            background-color: var(--color-dark-grey);
             z-index: 1000;
             position: absolute;
             top: 0;
@@ -155,29 +155,22 @@
             margin-left: 15mm;
         }
 
-        .partial-score-container .title {
-            font-size: 18px;
-        }
-
-        .circle:before {
-            border-radius: 50%;
-            content: "";
-        }
-
-        .circle:before, .circle:after {
-            position: absolute;
-        }
-
         .total-score {
+            border-radius: 50%;
+            display: inline-flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
             width: 220px;
             height: 220px;
             margin: 0;
+            transform: rotate(180deg);
         }
 
         .total-score:before {
-            width: 204px;
-            height: 204px;
-            background: linear-gradient(90deg, #517C92 0%, #4A6DA7 100%);
+            width: 200px;
+            height: 200px;
         }
 
         .partial-score {
@@ -192,36 +185,29 @@
             transform: rotate(180deg);
             font-size: 16px;
             text-align: center;
-            font-weight: 400;
             margin-right: 5mm;
         }
+
         .partial-score:before, .total-score:before {
             border-radius: 50%;
+            background: white;
             content: "";
-
         }
         .partial-score:before{
-            width: 126px;
-            height: 126px;
+            width: 122px;
+            height: 122px;
         }
+
         .partial-score:before,
         .partial-score:after,
         .total-score:before,
         .total-score:after {
             position: absolute;
         }
-        .partial-score div , .total-score div{
+
+        .partial-score div, .total-score div{
             z-index: 10;
             transform: rotate(180deg)
-        }
-        #ps1:before {
-            background: linear-gradient(90deg, #508577 0%, #4F7E85 100%);
-        }
-        #ps2:before {
-            background: linear-gradient(90deg,#54925F 0%, #518872 100%);
-        }
-        #ps3:before{
-            background: linear-gradient(90deg, #619F5B 0%, #54925F 100%);
         }
 
     </style>
@@ -231,7 +217,7 @@
     <table>
         <tbody>
         <tr class="indoc-header">
-            <td class="col half-page"><img alt="" src="../images/logo.png" class="logo"/></td>
+            <td class="col half-page"><img src="../images/logo.png" alt="" class="logo greyscale"/></td>
             <td class="col half-page links">
                 <div>
                     www.clearchoice.nyc
@@ -252,39 +238,39 @@
         <tr>
             <td class="subject-general-score">
                 <div class="total-core-container">
-                    <div class="total-score circle" style="background: conic-gradient(white 0deg, white calc(111 / 233 * 360deg), var(--color-semi-transparent) calc(111 / 233 * 360deg), var(--color-semi-transparent) 360deg);">
-                        <div>Score</div>
+                    <div class="total-score" style="background: conic-gradient(var(--color-mid-grey) 0deg, var(--color-mid-grey) calc(111 / 233 *360deg),var(--color-grey) calc(111 / 233 *360deg), var(--color-grey) 360deg);">
+                        <div class="font-semi">111 of 233</div>
                         <div>111</div>
-                        <div>111 of 233</div>
+                        <div class="font-semi">Score</div>
                     </div>
                 </div>
 
                 <div class="partial-score-container">
-                    <div class="title">Knowledge of the issues</div>
+                    <div class="partial-score-container-title font-semi">Knowledge of the issues</div>
                     <div class="partial-score-charts">
                         <div class="col">
-
-                            <div class="partial-score" id="ps1" style="background: conic-gradient(var(--color-green) 0deg, var(--color-green) calc(51 / 233 * 360deg), var(--color-semi-transparent) calc(51 / 233 * 360deg), var(--color-semi-transparent) 360deg);">
+                            <div class="partial-score" style="background: conic-gradient(var(--color-mid-grey) 0deg, var(--color-mid-grey) calc(51 / 233 *360deg),var(--color-grey) calc(51 / 233 *360deg), var(--color-grey) 360deg);">
+                                <div class="score-text font-semi">Mastered<br /> issues</div>
                                 <div class="score-number">51</div>
-                                <div class="score-text">Mastered <br />issues</div>
                             </div>
                         </div>
-                        <div class="col">
 
-                            <div class="partial-score" id="ps2" style="background: conic-gradient(var(--color-orange) 0deg, var(--color-orange) calc(35 / 233 * 360deg), var(--color-semi-transparent) calc(35 / 233 * 360deg), var(--color-semi-transparent) 360deg);">
+                        <div class="col">
+                            <div class="partial-score" style="background: conic-gradient(var(--color-mid-grey) 0deg, var(--color-mid-grey) calc(35 / 233 *360deg),var(--color-grey) calc(35 / 233 *360deg), var(--color-grey) 360deg);">
+                                <div class="score-text font-semi">Issues for<br /> training</div>
                                 <div class="score-number">35</div>
-                                <div class="score-text">Issues for <br /> training</div>
                             </div>
                         </div>
-                        <div class="col">
 
-                            <div class="partial-score" id="ps3" style="background: conic-gradient(var(--color-red) 0deg, var(--color-red) calc(14 / 233 * 360deg), var(--color-semi-transparent) calc(14 / 233 * 360deg), var(--color-semi-transparent) 360deg);">
+                        <div class="col">
+                            <div class="partial-score" style="background: conic-gradient(var(--color-mid-grey) 0deg, var(--color-mid-grey) calc(14 / 233 *360deg),var(--color-grey) calc(14 / 233 *360deg), var(--color-grey) 360deg);">
+                                <div class="score-text font-semi">Unmanned<br /> issues</div>
                                 <div class="score-number">14</div>
-                                <div class="score-text">Unmanned<br /> issues</div>
                             </div>
                         </div>
+
                     </div>
-                    <div class="title">Total issues: 42</div>
+                    <div class="partial-score-container-title font-semi">Total issues: 42</div>
                 </div>
 
             </td>
@@ -296,20 +282,20 @@
                 <div class="top-issues-section">
                     <span class="col badge red">34</span>
                     <span class="col">Plane Geometry and Trigonometry</span>
-                    <span class="col">Points Lost: <span class="col" style="color: var(--color-red)">4</span></span>
+                    <span class="col">Points Lost: <span class="col" style="color: var(--color-mid-grey)">4</span></span>
                     <span class="col">34 of 233</span>
                 </div>
                 <div class="top-issues-section">
                     <span class="col badge red">24</span>
                     <span class="col">Pre-Algebra and Elementary Algebra</span>
-                    <span class="col">Points Lost: <span class="col" style="color: var(--color-red)">4</span></span>
+                    <span class="col">Points Lost: <span class="col" style="color: var(--color-mid-grey)">4</span></span>
                     <span class="col">28 of 87</span>
                 </div>
 
                 <div class="top-issues-section">
                     <span class="col badge red">34</span>
                     <span class="col">Intermediate Algebra and Coordinate Geometry</span>
-                    <span class="col">Points Lost: <span class="col" style="color: var(--color-red)">2</span></span>
+                    <span class="col">Points Lost: <span class="col" style="color: var(--color-mid-grey)">2</span></span>
                     <span class="col">12 of 233</span>
                 </div>
 
@@ -323,7 +309,7 @@
                 <div>                <div class="top-issues-section">
                     <span class="col badge red">34</span>
                     <span class="col">Plane Geometry and Trigonometry</span>
-                    <span class="col">Points Lost: <span class="col" style="color: var(--color-red)">4</span></span>
+                    <span class="col">Points Lost: <span class="col" style="color: var(--color-mid-grey)">4</span></span>
                     <span class="col">34 of 233</span>
                 </div>
 

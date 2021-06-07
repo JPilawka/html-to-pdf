@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Report page 2</title>
+    <title>Color 2</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
     <link href="./shared.css" rel="stylesheet">
@@ -39,9 +39,9 @@
         .note:before {
             content: "";
             position: absolute;
-            border-left: 24px solid #5C8A4D;
+            border-left: 16px solid #75a874;
             border-right: 12px solid transparent;
-            border-top: 12px solid #5E8E46;
+            border-top: 12px solid #75a874;
             border-bottom: 20px solid transparent;
             right: 32px;
             bottom: -30px;
@@ -52,11 +52,13 @@
             width: 200px;
             height: 200px;
             margin: auto 10mm;
+            font-weight: 400;
         }
 
 
         .total-score div:nth-child(2) {
             font-size: 46px;
+
         }
 
         .subject-score {
@@ -64,23 +66,19 @@
             height: 150px;
             margin: auto;
             font-size: 16px;
+            font-weight: 400;
         }
 
         .subject-score div:nth-child(2) {
             font-size: 36px;
         }
 
-        .title {
-           font-weight: 700;
-            font-size: 20px;
-            margin-top: 10mm;
-            margin-bottom: 10mm;
-        }
         #score-table {
             background-color: var(--color-grey);
             font-size: 14px;
             color: var(--color-dark-grey);
             padding-bottom: 5mm;
+            font-weight: 300;
         }
 
         #score-table thead {
@@ -89,8 +87,6 @@
         }
         #score-table thead td{
             padding: 3mm 0;
-            font-weight: 600;
-
         }
 
         #score-table tbody tr {
@@ -120,11 +116,6 @@
 
         .row span {
             display: inline-block;
-        }
-
-        .number-stats {
-            width: 10mm;
-            text-align: center;
         }
 
         .graphic-stats {
@@ -183,7 +174,7 @@
         </tr>
         <tr>
             <td class="col">
-                <div  class="circle total-score" style="background: conic-gradient(#4868b1 180deg, #4868b1 calc(180deg + 30deg),var(--color-grey) calc(180deg + 30deg), var(--color-grey) 360deg);">
+                <div  class="circle total-score" style="background: conic-gradient(#4868b1 0deg, #4868b1 calc(72 /233 * 360deg),var(--color-grey) calc(72 /233 * 360deg), var(--color-grey) 360deg);">
                     <div>72 of 223</div>
                     <div>72</div>
                     <div>Total Score</div>
@@ -356,7 +347,7 @@
 
                 </tbody>
             </table>
-            <div class="row" style="font-size: 14px; margin-top: 5mm">
+            <div class="row" style="font-size: 14px; margin-top: 5mm; font-weight: 300">
                 <span class="best-score-number" style="font-weight: 500; margin-right: 2mm">34</span>
                 <span style="color: var(--color-dark-grey)">Personal Best</span>
             </div>

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Report page 4</title>
+    <title>Color 3</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
     <link href="./shared.css" rel="stylesheet">
-    <link href="./print.css" rel="stylesheet">
+    <link href="./color.css" rel="stylesheet">
 
     <style>
         body {
             font-family: "Open Sans", sans-serif;
+            font-weight: 300;
         }
 
         #scores td {vertical-align: top;}
@@ -20,12 +21,14 @@
             margin-right: 0
         }
 
+
         .labels, .question-row {
             font-size: 14px;
         }
 
         .column-header, .questions-container{
-            border: 2px var(--color-grey) solid;
+            background-color: var(--color-grey);
+            border: 2px transparent solid;
         }
 
         .question-row {
@@ -38,7 +41,7 @@
         }
         .question-row span:nth-child(2) {
             width: 8.5mm;
-            background-color: var(--color-grey);
+            background-color: #61b245;
             color: white;
         }
 
@@ -65,7 +68,7 @@
             display: inline-block;
             vertical-align: text-top;
             line-height: 20px;
-            font-weight: 400;
+            font-weight: 300;
         }
 
         .subject-legend span:first-child {
@@ -81,7 +84,7 @@
 
         }
         .legend-element span:first-child {
-            border: 1px var(--color-dark-grey) solid;
+            border: 1px black solid;
             width: 10mm;
             text-align: center
         }
@@ -89,15 +92,17 @@
         .legend-element span:last-child {
             margin-right: 10mm;
         }
-
+        .column-header{
+            border-bottom: 1px black solid;
+        }
     </style>
 </head>
 <body>
 <div class="page">
     <table>
         <tbody>
-        <tr class="indoc-header">
-            <td class="col half-page"><img src="../images/logo.png" alt="" class="logo greyscale"/></td>
+        <tr class="indoc-header ">
+            <td class="col half-page"><img alt="" src="../images/logo.png" class="logo"/></td>
             <td class="col half-page links">
                 <div>
                     www.clearchoice.nyc
@@ -121,7 +126,7 @@
                 <div class="questions-container">
                     <div class="question-row">
                         <span>1</span>
-                        <span style="background-color: var(--color-dark-grey)">B</span>
+                        <span style="background-color: var(--color-red)">B</span>
                         <span>C</span>
                         <span></span>
                     </div>
@@ -184,7 +189,7 @@
                 <div class="questions-container">
                     <div class="question-row">
                         <span>1</span>
-                        <span style="background-color: var(--color-dark-grey)">B</span>
+                        <span style="background-color: var(--color-red)">B</span>
                         <span>C</span>
                         <span></span>
                     </div>
@@ -265,8 +270,8 @@
                 <div class="questions-container">
                     <div class="question-row">
                         <span>1</span>
-                        <span style="background-color: var(--color-dark-grey)">0.66 + ...</span>
-                        <span>0.56</span>
+                        <span style="background-color: var(--color-red)">0.56</span>
+                        <span>0066 + ...</span>
                         <span></span>
                     </div>
                     <div class="question-row">
@@ -329,7 +334,7 @@
             </td>
         </tr>
 
-        <tr class="footer font-poppins">
+        <tr class="footer">
             <td class="col" style="width: 30%; text-align: left">
                 Doe, Matthew
             </td>
