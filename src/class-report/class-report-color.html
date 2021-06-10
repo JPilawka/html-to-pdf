@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Color 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-name-section: #C7CEDA;
+            --color-cell-bg: #ecf0f3;
+            --color-cell: #404752;
+            --color-light-grey: #d9d9d9;
+
+            --color-mid-grey: #999999;
+            --color-dark-grey: #666666;
+
+            --color-orange: #DB944B;
+            --color-green: #78A55A;
+            --color-yellow: #EAC251;
+            --color-blue: #4E85C1;
+            --color-violet: #984EC1;
+
+            --color-black: #030A16;
+
+            --color-total-score-section-bg: #E3D9D2;
+            --color-total-score-section: #69452A;
+
+            --color-reading-section-bg: #d9ead3;
+            --color-reading-section: #304F2F;
+
+            --color-writing-section-bg: #fff2cc;
+            --color-writing-section: #726130;
+
+            --color-math-section-bg: #C1D6EF;
+            --color-math-section: #163C6D;
+
+            --color-science-section-bg: #E0C1EF;
+            --color-science-section: #49166D;
+        }
+
+        .page-break {
+            page-break-after: always;
+        }
+
+        .report-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-family: sans-serif;
+            min-width: 400px;
+            color: var(--color-black);
+            font-size: 10px;
+            text-align: center;
+
+        }
+
+        table td {
+            border-left: 1px solid var(--color-black);
+            border-right: 1px solid var(--color-black);
+        }
+
+        table tr td:nth-child(3) {
+            background: white !important;
+            border: 0 solid white !important;
+            width: 2mm !important;
+            padding: 0 !important;
+        }
+
+        table tbody tr td:first-child {
+            border-right: 0 solid var(--color-black);
+            border-left: 2px solid var(--color-black);
+            text-align: left;
+        }
+
+        table tbody tr td:nth-child(2) {
+            border-left: 0 solid var(--color-black);
+            border-right: 2px solid var(--color-black);
+            text-align: left;
+        }
+
+        thead td {
+            padding: 5px;
+            font-weight: 600;
+        }
+
+        #main-thead {
+            background-color: var(--color-black);
+        }
+
+        #secondary-thead {
+            border-bottom: 2px var(--color-black) solid;
+        }
+
+        .silver-border-cell {
+            border-left: 2px var(--color-name-section) solid;
+        }
+
+        .black-bold-border {
+            border-left: 2px var(--color-black) solid;
+            border-right: 2px var(--color-black) solid;
+        }
+
+        #summarized-row {
+            border-top: 4px solid var(--color-black);
+            font-weight: 600;
+
+
+        }
+
+        #summarized-row td {
+            color: white;
+            background-color: var(--color-mid-grey);
+            padding: 3px;
+            font-size: 1.2em;
+        }
+
+        #summarized-legend td {
+            background-color: var(--color-name-section);
+            padding: 2px;
+            font-weight: bold;
+            border-top: 2px solid var(--color-black);
+            border-bottom: 2px solid var(--color-black);
+        }
+
+        #summarized-row td:first-child, #summarized-legend td:first-child, #summarized-legend td:nth-child(2) {
+            background-color: white;
+            border: 0;
+        }
+        body {
+            color: white;
+            font-family: "Poppins", sans-serif;
+            width: 297mm;
+            margin: 0;
+            padding: 5mm 5mm;
+        }
+
+        #main-thead {
+            background-color: var(--color-black);
+        }
+
+        .student-section {
+            background-color: var(--color-name-section);
+            color: var(--color-black);
+        }
+
+        .total-section, tbody tr td:nth-child(4) {
+            background-color: var(--color-total-score-section-bg);
+            color: var(--color-total-score-section);
+            font-weight: 600;
+        }
+
+        .reading-section, tbody tr td:nth-child(5), #summarized-legend td:nth-child(5){
+            background-color: var(--color-reading-section-bg);
+            color: var(--color-reading-section);
+            font-weight: 600;
+        }
+        .writing-section, tbody tr td:nth-child(8), #summarized-legend td:nth-child(8) {
+            background-color: var(--color-writing-section-bg);
+            color: var(--color-writing-section);
+            font-weight: 600;
+        }
+        .math-section, tbody tr td:nth-child(11) , #summarized-legend td:nth-child(11){
+            background-color: var(--color-math-section-bg);
+            color: var(--color-math-section);
+            font-weight: 600;
+        }
+        .science-section, tbody tr td:nth-child(14), #summarized-legend td:nth-child(14) {
+            background-color: var(--color-science-section-bg);
+            color: var(--color-science-section);
+            font-weight: 600;
+        }
+
+        tbody td {
+            background-color: var(--color-cell-bg);
+            color: var(--color-cell);
+        }
+
+        .data-row td {
+            padding-top: 2px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid var(--color-light-grey)
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="page">
+    <table class="report-table page-break">
+        <thead id="main-thead">
+            <tr>
+                <td style="color: var(--color-name-section);">
+                    Fourth Class Test
+                    <div style="font-size: 0.9em">(SAT ver. June 2018)</div>
+                </td>
+                <td style="color: var(--color-name-section);" class="silver-border-cell">
+                    Test Date<br />
+                    2021.04.19
+                </td>
+                <td></td>
+                <td style="color: var(--color-total-score-section-bg);border-left-width: 2px">
+                    Total<br />
+                    SAT Score
+                </td>
+                <td colspan="3" style="color: var(--color-reading-section-bg);">
+                    SAT Reading Scores
+                </td>
+                <td colspan="3" style="color: var(--color-writing-section-bg);" class="silver-border-cell">
+                    SAT Writing Scores
+                </td>
+                <td colspan="3" style="color: var(--color-math-section-bg);" class="silver-border-cell">
+                    SAT Math Scores
+                    <div style="font-size: 0.9em">(no-calc + calc)</div>
+                </td>
+
+                <td colspan="3" style="color: var(--color-science-section-bg);" class="silver-border-cell">
+                    ACT Science Scores
+                </td>
+            </tr>
+
+        </thead>
+
+        <thead id="secondary-thead">
+        <tr>
+            <td class="student-section black-bold-border">Student's Name (last)</td>
+            <td class="student-section black-bold-border">Student Name (first)</td>
+            <td></td>
+            <td class="total-section black-bold-border">
+                Composite
+                Score
+            </td>
+            <!-- This section is per subject ---START -->
+            <td class="reading-section">Scaled Score</td>
+            <td class="student-section">Raw Score</td>
+            <td class="student-section">% Correct</td>
+            <!-- This section is per subject  ---END -->
+
+            <td class="writing-section">Scaled Score</td>
+            <td class="student-section">Raw Score</td>
+            <td class="student-section">% Correct</td>
+
+            <td class="math-section">Scaled Score</td>
+            <td class="student-section">Raw Score</td>
+            <td class="student-section">% Correct</td>
+
+            <td class="science-section">Scaled Score</td>
+            <td class="student-section">Raw Score</td>
+            <td class="student-section">% Correct</td>
+        </tr>
+
+        </thead>
+        <tbody>
+
+        <tr class="data-row">
+            <td>Last</td>
+            <td>Hardee</td>
+            <td></td>
+            <td class="black-bold-border">1490</td>
+
+            <td>390</td>
+            <td>51</td>
+            <td>98%</td>
+
+            <td>360</td>
+            <td>41</td>
+            <td>93%</td>
+
+            <td>790</td>
+            <td>56</td>
+            <td>96%</td>
+
+            <td>790</td>
+            <td>56</td>
+            <td>96%</td>
+        </tr>
+
+
+
+        <tr class="data-row">
+            <td>Last</td>
+            <td>Hardee</td>
+            <td></td>
+            <td class="black-bold-border">1490</td>
+
+            <td>390</td>
+            <td>51</td>
+            <td>98%</td>
+
+            <td>360</td>
+            <td>41</td>
+            <td>93%</td>
+
+            <td>790</td>
+            <td>56</td>
+            <td>96%</td>
+
+            <td>790</td>
+            <td>56</td>
+            <td>96%</td>
+        </tr>
+
+        <tr id="summarized-row">
+            <td></td>
+            <td style="background-color: var(--color-dark-grey); border: 2px solid var(--color-black); text-align: center; font-size: 1em;">Class Averages</td>
+            <td></td>
+            <td class="black-bold-border" style="background-color: var(--color-orange)">1262</td>
+
+            <td style="background-color: var(--color-green); border: 2px solid var(--color-black)">329</td>
+            <td>40.1</td>
+            <td>77%</td>
+
+            <td style="background-color: var(--color-yellow); border: 2px solid var(--color-black)">321</td>
+            <td>34.5</td>
+            <td>78%</td>
+
+            <td style="background-color: var(--color-blue); border: 2px solid var(--color-black)">706</td>
+            <td>48.9</td>
+            <td>84%</td>
+
+            <td style="background-color: var(--color-violet); border: 2px solid var(--color-black)">706</td>
+            <td>48.9</td>
+            <td>84%</td>
+        </tr>
+
+        <tr id="summarized-legend">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="black-bold-border" style="background-color:white">Composite Score</td>
+
+            <td>Scaled Score</td>
+            <td>Raw Score</td>
+            <td>% Correct</td>
+
+            <td>Scaled Score</td>
+            <td>Raw Score</td>
+            <td>% Correct</td>
+
+            <td>Scaled Score</td>
+            <td>Raw Score</td>
+            <td>% Correct</td>
+
+            <td>Scaled Score</td>
+            <td>Raw Score</td>
+            <td>% Correct</td>
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+</body>
+</html>
